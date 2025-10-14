@@ -97,6 +97,18 @@ abstract class AppLocalizations {
     Locale('ar'),
     Locale('en'),
   ];
+
+  /// No description provided for @explore_deals.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore Deals'**
+  String get explore_deals;
+
+  /// No description provided for @all.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get all;
 }
 
 class _AppLocalizationsDelegate
