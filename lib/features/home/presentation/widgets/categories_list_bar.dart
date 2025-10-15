@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otex/core/constants/sizes.dart';
+import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/features/home/presentation/widgets/category_widget.dart';
 import 'package:otex/features/home/presentation/widgets/horizontal_scroll_bar.dart';
 

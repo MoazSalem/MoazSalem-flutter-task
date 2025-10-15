@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otex/app/main_screen.dart';
-import 'package:otex/core/constants/theme.dart';
+import 'package:otex/core/theme/app_theme.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class App extends StatelessWidget {

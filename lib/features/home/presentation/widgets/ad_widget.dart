@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:otex/core/constants/assets.dart';
-import 'package:otex/core/constants/sizes.dart';
+import 'package:otex/core/theme/app_assets.dart';
+import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class AdWidget extends StatelessWidget {

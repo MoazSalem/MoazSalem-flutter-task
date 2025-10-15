@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:otex/core/constants/assets.dart';
-import 'package:otex/core/constants/sizes.dart';
+import 'package:otex/core/theme/app_assets.dart';
+import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/features/home/presentation/widgets/horizontal_scroll_bar.dart';
 import 'package:otex/features/home/presentation/widgets/subcategory_widget.dart';
 

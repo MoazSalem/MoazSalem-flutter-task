@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otex/core/constants/sizes.dart';
+import 'package:otex/core/theme/app_sizes.dart';
 
 class SubcategoryWidget extends StatelessWidget {
   final String title;
