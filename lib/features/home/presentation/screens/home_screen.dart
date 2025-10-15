@@ -10,17 +10,15 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            HomeScreenAppBar(),
-            CategoriesListBar(),
-            SubcategoriesListBar(),
-            FreeShippingBanner(),
-            AdsGridView(),
-          ],
-        ),
+    return SizedBox.expand(
+      child: CustomScrollView(
+        slivers: [
+          HomeScreenAppBar(),
+          CategoriesListBar(),
+          SubcategoriesListBar(),
+          FreeShippingBanner(),
+          AdsGridView(),
+        ],
       ),
     );
   }
