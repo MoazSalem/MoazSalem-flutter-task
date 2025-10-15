@@ -19,4 +19,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get for_any_offer => 'لأى عرض تطلبه دلوقتى !';
+
+  @override
+  String get sold_over => 'تم بيع';
+
+  @override
+  String get egp => 'ج.م';
 }

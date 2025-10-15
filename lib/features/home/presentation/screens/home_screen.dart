@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:otex/features/home/presentation/widgets/ads_grid_view.dart';
 import 'package:otex/features/home/presentation/widgets/categories_list_bar.dart';
 import 'package:otex/features/home/presentation/widgets/free_shipping_banner.dart';
 import 'package:otex/features/home/presentation/widgets/home_screen_app_bar.dart';
@@ -17,7 +18,7 @@ class HomeScreen extends StatelessWidget {
             CategoriesListBar(),
             SubcategoriesListBar(),
             FreeShippingBanner(),
-            SliverFillRemaining(),
+            AdsGridView(),
           ],
         ),
       ),

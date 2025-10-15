@@ -19,4 +19,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get for_any_offer => 'For Any Offer You Order Right Now !';
+
+  @override
+  String get sold_over => 'Sold Over';
+
+  @override
+  String get egp => 'EGP';
 }

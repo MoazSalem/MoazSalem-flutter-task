@@ -121,6 +121,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'For Any Offer You Order Right Now !'**
   String get for_any_offer;
+
+  /// No description provided for @sold_over.
+  ///
+  /// In en, this message translates to:
+  /// **'Sold Over'**
+  String get sold_over;
+
+  /// No description provided for @egp.
+  ///
+  /// In en, this message translates to:
+  /// **'EGP'**
+  String get egp;
 }
 
 class _AppLocalizationsDelegate

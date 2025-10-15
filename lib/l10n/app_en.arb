@@ -2,5 +2,7 @@
   "explore_deals": "Explore Deals",
   "all": "All",
   "free_shipping" : "Free Shipping",
-  "for_any_offer" : "For Any Offer You Order Right Now !"
+  "for_any_offer" : "For Any Offer You Order Right Now !",
+  "sold_over": "Sold Over",
+  "egp" : "EGP"
 }

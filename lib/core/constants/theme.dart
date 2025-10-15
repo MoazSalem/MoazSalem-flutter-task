@@ -10,6 +10,7 @@ class AppTheme {
       primary: Color(0xff090F1F),
       primaryFixed: Color(0x80090F1F),
       primaryFixedDim: Color(0x80000000),
+      primaryContainer: Color(0x0D000000),
       secondary: Color(0xFFF95B1C),
       secondaryFixed: Color(0xFFFF4144),
       secondaryFixedDim: Color(0x0DF95B1C),
