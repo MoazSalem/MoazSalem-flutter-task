@@ -13,7 +13,7 @@ class HomeScreenAppBar extends StatelessWidget {
     return SliverAppBar(
       toolbarHeight: AppSizes.toolbarHeight,
       title: Padding(
-        padding: const EdgeInsets.only(top: AppSizes.padding20),
+        padding: const EdgeInsets.only(top: AppSizes.padding40),
         child: Text(
           locale.explore_deals,
           style: TextStyle(fontWeight: FontWeight.w500),
@@ -45,7 +45,7 @@ class HomeScreenAppBar extends StatelessWidget {
         ),
       ],
       actionsPadding: const EdgeInsetsGeometry.directional(
-        top: AppSizes.padding20,
+        top: AppSizes.padding40,
         end: AppSizes.padding,
       ),
     );

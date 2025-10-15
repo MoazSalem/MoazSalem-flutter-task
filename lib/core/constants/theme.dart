@@ -17,6 +17,7 @@ class AppTheme {
       tertiary: Color(0xFF0062E2),
       tertiaryFixed: Color(0xFF3A813F),
       outline: Color(0x16000000),
+      surface: Color(0xffffffff),
     ),
     fontFamily: 'Tajawal',
   );
