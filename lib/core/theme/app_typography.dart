@@ -13,6 +13,7 @@ class AppTypography {
     labelSmall: labelSmall,
     titleMedium: titleMedium,
     titleSmall: titleSmall,
+    bodyMedium: bodyMedium,
   );
 
   static TextStyle? get headlineLarge =>
@@ -35,4 +36,7 @@ class AppTypography {
 
   static TextStyle get titleSmall =>
       TextStyle(fontSize: AppSizes.font10, fontWeight: FontWeight.w400);
+
+  static TextStyle get bodyMedium =>
+      TextStyle(fontSize: AppSizes.font12, fontWeight: FontWeight.w500);
 }

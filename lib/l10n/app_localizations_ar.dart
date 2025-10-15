@@ -25,4 +25,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get egp => 'ج.م';
+
+  @override
+  String get home => 'الرئيسية';
+
+  @override
+  String get chat => 'محادثة';
+
+  @override
+  String get add_ad => 'أضف أعلان';
+
+  @override
+  String get my_ads => 'أعلاناتى';
+
+  @override
+  String get account => 'حسابى';
 }

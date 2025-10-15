@@ -133,6 +133,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'EGP'**
   String get egp;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @chat.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat'**
+  String get chat;
+
+  /// No description provided for @add_ad.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Ad'**
+  String get add_ad;
+
+  /// No description provided for @my_ads.
+  ///
+  /// In en, this message translates to:
+  /// **'My Ads'**
+  String get my_ads;
+
+  /// No description provided for @account.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get account;
 }
 
 class _AppLocalizationsDelegate

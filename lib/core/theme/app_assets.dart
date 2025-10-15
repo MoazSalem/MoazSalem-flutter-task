@@ -10,6 +10,11 @@ class AppAssets {
   static const String companyBadge = 'assets/images/svg/company_badge.svg';
   static const String addToCart = 'assets/images/svg/add_to_cart.svg';
   static const String sellerIcon = 'assets/images/png/seller_0.png';
+  static const String home = 'assets/images/svg/home.svg';
+  static const String chat = 'assets/images/svg/chat.svg';
+  static const String add = 'assets/images/svg/add.svg';
+  static const String myAds = 'assets/images/svg/my_ads.svg';
+  static const String account = 'assets/images/svg/account.svg';
 
   static String getSubcategoryImage({required int index}) {
     return 'assets/images/png/subcategory_$index.png';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:otex/app/widgets/custom_navigation_bar.dart';
 import 'package:otex/features/home/presentation/screens/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -23,6 +24,7 @@ class _MainScreenState extends State<MainScreen> {
       body: SafeArea(
         child: PageView(controller: _pageController, children: [HomeScreen()]),
       ),
+      bottomNavigationBar: SafeArea(top: false, child: CustomNavigationBar()),
     );
   }
 }

@@ -4,5 +4,10 @@
   "free_shipping" : "Free Shipping",
   "for_any_offer" : "For Any Offer You Order Right Now !",
   "sold_over": "Sold Over",
-  "egp" : "EGP"
+  "egp" : "EGP",
+  "home" : "Home",
+  "chat" : "Chat",
+  "add_ad" : "Add Ad",
+  "my_ads" : "My Ads",
+  "account" : "Account"
 }

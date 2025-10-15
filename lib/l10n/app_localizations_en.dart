@@ -25,4 +25,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get egp => 'EGP';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get chat => 'Chat';
+
+  @override
+  String get add_ad => 'Add Ad';
+
+  @override
+  String get my_ads => 'My Ads';
+
+  @override
+  String get account => 'Account';
 }
