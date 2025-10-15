@@ -28,7 +28,7 @@ class CategoryWidget extends StatelessWidget {
         ),
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppSizes.padding12),
+            padding: EdgeInsets.symmetric(horizontal: AppSizes.p12),
             child: Text(
               title,
               style: AppTypography.labelLarge.copyWith(

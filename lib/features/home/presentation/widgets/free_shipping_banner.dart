@@ -14,9 +14,9 @@ class FreeShippingBanner extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     return SliverToBoxAdapter(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: AppSizes.padding,
-          vertical: AppSizes.padding8,
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSizes.p16,
+          vertical: AppSizes.p8,
         ),
         child: Container(
           height: AppSizes.freeShippingBannerHeight,
@@ -25,12 +25,12 @@ class FreeShippingBanner extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppSizes.padding),
+            padding: EdgeInsets.symmetric(horizontal: AppSizes.p16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
-                  spacing: AppSizes.padding8,
+                  spacing: AppSizes.p8,
                   children: [
                     SvgPicture.asset(AppAssets.check),
                     Text(

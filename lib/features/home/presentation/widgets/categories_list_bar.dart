@@ -23,7 +23,7 @@ class CategoriesListBar extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: _tempCategories.length,
         itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsetsGeometry.directional(end: AppSizes.padding8),
+          padding: EdgeInsetsGeometry.directional(end: AppSizes.p8),
           child: CategoryWidget(
             title: _tempCategories[index],
             isSelected: index == 0,

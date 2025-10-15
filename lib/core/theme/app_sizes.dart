@@ -4,12 +4,15 @@ class AppSizes {
   // prevent instantiation
   AppSizes._();
 
-  static const double padding4 = 4;
-  static const double padding8 = 8;
-  static const double padding12 = 12;
-  static const double padding = 16;
-  static const double padding20 = 20;
-  static const double padding40 = 40;
+  // Paddings
+  static double get p4 => 4.w;
+  static double get p8 => 8.w;
+  static double get p12 => 12.w;
+  static double get p16 => 16.w;
+  static double get p20 => 20.w;
+  static double get p24 => 24.w;
+  static double get p40 => 40.w;
+
   static const double smallRoundedCorner = 4;
   static const double borderWidth = 1;
   static const double toolbarHeight = 100;

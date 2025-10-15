@@ -14,13 +14,13 @@ class SubcategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsGeometry.directional(end: AppSizes.padding12),
+      padding: EdgeInsetsGeometry.directional(end: AppSizes.p12),
       child: InkWell(
         onTap: () {},
         borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          spacing: AppSizes.padding8,
+          spacing: AppSizes.p8,
           children: [
             Container(
               decoration: BoxDecoration(

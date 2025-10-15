@@ -23,20 +23,20 @@ class AdWidget extends StatelessWidget {
       child: Column(
         children: [
           _buildImageContainer(context, image: AppAssets.getAdImage(index: 1)),
-          const SizedBox(height: AppSizes.padding8),
+          SizedBox(height: AppSizes.p8),
           _buildTitleRow(
             context,
             title: "جاكيت من الصوف مناسب",
             isDiscounted: true,
           ),
-          const SizedBox(height: AppSizes.padding8),
+          SizedBox(height: AppSizes.p8),
           _buildPriceRow(
             context,
             discountedPrice: "32,000,000",
             originalPrice: "60,000,000",
             currency: AppLocalizations.of(context)!.egp,
           ),
-          const SizedBox(height: AppSizes.padding8),
+          SizedBox(height: AppSizes.p8),
           _buildSoldOverRow(context, soldCount: "3.3k"),
 
           _buildSellerInfoRow(context),
@@ -73,7 +73,7 @@ class AdWidget extends StatelessWidget {
     bool isDiscounted = false,
   }) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSizes.padding8),
+      padding: EdgeInsets.symmetric(horizontal: AppSizes.p8),
       child: Row(
         children: [
           Expanded(
@@ -99,7 +99,7 @@ class AdWidget extends StatelessWidget {
     required final String currency,
   }) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSizes.padding8),
+      padding: EdgeInsets.symmetric(horizontal: AppSizes.p8),
       child: Row(
         children: [
           Expanded(
@@ -136,9 +136,9 @@ class AdWidget extends StatelessWidget {
 
   Padding _buildSoldOverRow(BuildContext context, {required String soldCount}) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSizes.padding8),
+      padding: EdgeInsets.symmetric(horizontal: AppSizes.p8),
       child: Row(
-        spacing: AppSizes.padding4,
+        spacing: AppSizes.p4,
         children: [
           SvgPicture.asset(AppAssets.fire),
           Text(
@@ -157,10 +157,10 @@ class AdWidget extends StatelessWidget {
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Padding(
-          padding: const EdgeInsets.all(AppSizes.padding8),
+          padding: EdgeInsets.all(AppSizes.p8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            spacing: AppSizes.padding,
+            spacing: AppSizes.p16,
             children: [
               SvgPicture.asset(AppAssets.companyBadge),
               Spacer(),
@@ -180,9 +180,9 @@ class AdWidget extends StatelessWidget {
                     AppSizes.smallRoundedCorner,
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AppSizes.padding8,
-                      vertical: AppSizes.padding4,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppSizes.p8,
+                      vertical: AppSizes.p4,
                     ),
                     child: SvgPicture.asset(AppAssets.addToCart),
                   ),

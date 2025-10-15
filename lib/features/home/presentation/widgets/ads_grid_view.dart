@@ -8,7 +8,7 @@ class AdsGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: const EdgeInsets.all(AppSizes.padding),
+      padding: EdgeInsets.all(AppSizes.p16),
       sliver: SliverGrid(
         delegate: SliverChildBuilderDelegate(
           childCount: 8,
@@ -18,8 +18,8 @@ class AdsGridView extends StatelessWidget {
           childAspectRatio: AppSizes.adWidgetAspectRatio,
           mainAxisExtent: AppSizes.adWidgetHeight,
           maxCrossAxisExtent: AppSizes.adWidgetWidth,
-          mainAxisSpacing: AppSizes.padding12,
-          crossAxisSpacing: AppSizes.padding12,
+          mainAxisSpacing: AppSizes.p12,
+          crossAxisSpacing: AppSizes.p12,
         ),
       ),
     );
