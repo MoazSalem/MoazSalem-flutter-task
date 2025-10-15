@@ -1,0 +1,37 @@
+import 'package:flutter/material.dart';
+import 'package:otex/core/constants/assets.dart';
+import 'package:otex/core/constants/sizes.dart';
+import 'package:otex/features/home/presentation/widgets/horizontal_scroll_bar.dart';
+import 'package:otex/features/home/presentation/widgets/subcategory_widget.dart';
+
+const _tempSubcategories = [
+  "موضة رجالى",
+  "ساعات",
+  "موبايلات",
+  "منتجات تجميل",
+  "عقارات",
+];
+
+class SubcategoriesListBar extends StatelessWidget {
+  const SubcategoriesListBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverPadding(
+      padding: const EdgeInsets.symmetric(
+        vertical: AppSizes.subcategoryBarPadding,
+      ),
+      sliver: HorizontalScrollBar(
+        height: AppSizes.subcategoryBarHeight,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: _tempSubcategories.length,
+          itemBuilder: (context, index) => SubcategoryWidget(
+            title: _tempSubcategories[index],
+            image: AppAssets.getSubcategoryImage(index: index),
+          ),
+        ),
+      ),
+    );
+  }
+}
