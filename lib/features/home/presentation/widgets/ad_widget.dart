@@ -36,7 +36,7 @@ class AdWidget extends StatelessWidget {
             originalPrice: "60,000,000",
             currency: AppLocalizations.of(context)!.egp,
           ),
-          SizedBox(height: AppSizes.p8),
+          SizedBox(height: AppSizes.p4),
           _buildSoldOverRow(context, soldCount: "3.3k"),
 
           _buildSellerInfoRow(context),
@@ -159,38 +159,41 @@ class AdWidget extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(AppSizes.p8),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            spacing: AppSizes.p16,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SvgPicture.asset(AppAssets.companyBadge),
-              Spacer(),
-              Material(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                    AppSizes.smallRoundedCorner,
-                  ),
-                  side: BorderSide(
-                    color: Theme.of(context).colorScheme.outline,
-                    width: AppSizes.borderWidth,
-                  ),
-                ),
-                child: InkWell(
-                  onTap: () {},
-                  borderRadius: BorderRadius.circular(
-                    AppSizes.smallRoundedCorner,
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: AppSizes.p8,
-                      vertical: AppSizes.p4,
+              Row(
+                spacing: AppSizes.p16,
+                children: [
+                  Material(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                        AppSizes.smallRoundedCorner,
+                      ),
+                      side: BorderSide(
+                        color: Theme.of(context).colorScheme.outline,
+                        width: AppSizes.borderWidth,
+                      ),
                     ),
-                    child: SvgPicture.asset(AppAssets.addToCart),
+                    child: InkWell(
+                      onTap: () {},
+                      borderRadius: BorderRadius.circular(
+                        AppSizes.smallRoundedCorner,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppSizes.p8,
+                          vertical: AppSizes.p4,
+                        ),
+                        child: SvgPicture.asset(AppAssets.addToCart),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              Image.asset(
-                AppAssets.sellerIcon,
-                height: AppSizes.adWidgetSellerIconHeight,
+                  Image.asset(
+                    AppAssets.sellerIcon,
+                    height: AppSizes.adWidgetSellerIconHeight,
+                  ),
+                ],
               ),
             ],
           ),
