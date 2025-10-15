@@ -109,6 +109,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'All'**
   String get all;
+
+  /// No description provided for @free_shipping.
+  ///
+  /// In en, this message translates to:
+  /// **'Free Shipping'**
+  String get free_shipping;
+
+  /// No description provided for @for_any_offer.
+  ///
+  /// In en, this message translates to:
+  /// **'For Any Offer You Order Right Now !'**
+  String get for_any_offer;
 }
 
 class _AppLocalizationsDelegate

@@ -13,4 +13,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get all => 'All';
+
+  @override
+  String get free_shipping => 'Free Shipping';
+
+  @override
+  String get for_any_offer => 'For Any Offer You Order Right Now !';
 }

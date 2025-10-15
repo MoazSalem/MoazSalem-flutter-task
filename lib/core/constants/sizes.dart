@@ -15,7 +15,9 @@ class AppSizes {
   static const double subcategoryBarPadding = 32;
   static const double subcategoryWidgetHeight = 56;
   static const double subcategoryWidgetWidth = 73;
+  static const double freeShippingBannerHeight = 32;
 
+  static const double font10 = 10;
   static const double font12 = 12;
   static const double font16 = 16;
   static const double font18 = 18;
