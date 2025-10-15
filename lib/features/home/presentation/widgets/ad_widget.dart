@@ -163,7 +163,7 @@ class AdWidget extends StatelessWidget {
             children: [
               SvgPicture.asset(AppAssets.companyBadge),
               Row(
-                spacing: AppSizes.p16,
+                spacing: AppSizes.p12,
                 children: [
                   Material(
                     shape: RoundedRectangleBorder(

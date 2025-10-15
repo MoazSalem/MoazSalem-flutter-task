@@ -16,17 +16,20 @@ class CategoriesListBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HorizontalScrollBar(
-      pinned: true,
-      height: AppSizes.categoryBarHeight,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: _tempCategories.length,
-        itemBuilder: (context, index) => Padding(
-          padding: EdgeInsetsGeometry.directional(end: AppSizes.p8),
-          child: CategoryWidget(
-            title: _tempCategories[index],
-            isSelected: index == 0,
+    return SliverPadding(
+      padding: EdgeInsetsGeometry.directional(start: AppSizes.p16),
+      sliver: HorizontalScrollBar(
+        pinned: true,
+        height: AppSizes.categoryBarHeight,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: _tempCategories.length,
+          itemBuilder: (context, index) => Padding(
+            padding: EdgeInsetsGeometry.directional(end: AppSizes.p8),
+            child: CategoryWidget(
+              title: _tempCategories[index],
+              isSelected: index == 0,
+            ),
           ),
         ),
       ),

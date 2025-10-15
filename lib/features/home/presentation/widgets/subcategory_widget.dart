@@ -32,7 +32,12 @@ class SubcategoryWidget extends StatelessWidget {
               width: AppSizes.subcategoryWidgetWidth,
               child: Image.asset(image, fit: BoxFit.fill),
             ),
-            Text(title, style: AppTypography.labelMedium),
+            Text(
+              title,
+              style: AppTypography.labelMedium!.copyWith(
+                color: Theme.of(context).colorScheme.primary,
+              ),
+            ),
           ],
         ),
       ),

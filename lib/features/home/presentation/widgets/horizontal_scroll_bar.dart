@@ -16,6 +16,7 @@ class HorizontalScrollBar extends StatelessWidget {
     return SliverAppBar(
       pinned: pinned,
       primary: false,
+      titleSpacing: 0,
       toolbarHeight: height,
       surfaceTintColor: Colors.transparent,
       backgroundColor: Theme.of(context).colorScheme.surface,

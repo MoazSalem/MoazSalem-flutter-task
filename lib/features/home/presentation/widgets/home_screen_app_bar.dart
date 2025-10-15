@@ -13,9 +13,15 @@ class HomeScreenAppBar extends StatelessWidget {
     final locale = AppLocalizations.of(context)!;
     return SliverAppBar(
       toolbarHeight: AppSizes.toolbarHeight,
+      titleSpacing: AppSizes.p16,
       title: Padding(
         padding: EdgeInsets.only(top: AppSizes.p40),
-        child: Text(locale.explore_deals, style: AppTypography.headlineSmall),
+        child: Text(
+          locale.explore_deals,
+          style: AppTypography.headlineSmall!.copyWith(
+            color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
       ),
       actions: [
         InkWell(

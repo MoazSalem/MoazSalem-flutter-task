@@ -18,9 +18,10 @@ class SubcategoriesListBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: const EdgeInsets.only(
+      padding: EdgeInsetsGeometry.directional(
         top: AppSizes.subcategoryBarTopPadding,
         bottom: AppSizes.subcategoryBarBottomPadding,
+        start: AppSizes.p16,
       ),
       sliver: HorizontalScrollBar(
         height: AppSizes.subcategoryBarHeight,
