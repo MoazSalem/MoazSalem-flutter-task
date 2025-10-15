@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:otex/core/theme/app_assets.dart';
 import 'package:otex/core/theme/app_sizes.dart';
+import 'package:otex/core/theme/app_typography.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class FreeShippingBanner extends StatelessWidget {
@@ -10,6 +11,7 @@ class FreeShippingBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context)!;
+    final colorScheme = Theme.of(context).colorScheme;
     return SliverToBoxAdapter(
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -19,7 +21,7 @@ class FreeShippingBanner extends StatelessWidget {
         child: Container(
           height: AppSizes.freeShippingBannerHeight,
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.secondaryFixedDim,
+            color: colorScheme.secondaryFixedDim,
             borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
           ),
           child: Padding(
@@ -33,19 +35,15 @@ class FreeShippingBanner extends StatelessWidget {
                     SvgPicture.asset(AppAssets.check),
                     Text(
                       locale.free_shipping,
-                      style: TextStyle(
-                        fontSize: AppSizes.font12,
-                        fontWeight: FontWeight.w400,
-                        color: Theme.of(context).colorScheme.tertiaryFixed,
+                      style: AppTypography.labelMedium!.copyWith(
+                        color: colorScheme.tertiaryFixed,
                       ),
                     ),
                   ],
                 ),
                 Text(
                   locale.for_any_offer,
-                  style: TextStyle(
-                    fontSize: AppSizes.font10,
-                    fontWeight: FontWeight.w400,
+                  style: AppTypography.labelSmall.copyWith(
                     color: Theme.of(context).colorScheme.primary,
                   ),
                 ),

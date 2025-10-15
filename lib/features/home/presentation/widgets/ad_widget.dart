@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:otex/core/theme/app_assets.dart';
 import 'package:otex/core/theme/app_sizes.dart';
+import 'package:otex/core/theme/app_typography.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class AdWidget extends StatelessWidget {
@@ -80,9 +81,7 @@ class AdWidget extends StatelessWidget {
               title,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontSize: AppSizes.font14,
-                fontWeight: FontWeight.w500,
+              style: AppTypography.titleMedium!.copyWith(
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),
@@ -108,18 +107,15 @@ class AdWidget extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               text: TextSpan(
-                style: TextStyle(
-                  fontSize: AppSizes.font14,
-                  fontWeight: FontWeight.w500,
+                style: AppTypography.titleMedium!.copyWith(
                   color: Theme.of(context).colorScheme.secondaryFixed,
-                  overflow: TextOverflow.ellipsis,
                 ),
                 children: [
                   TextSpan(text: discountedPrice),
                   TextSpan(text: "$currency/"),
                   TextSpan(
                     text: originalPrice,
-                    style: TextStyle(
+                    style: AppTypography.titleMedium!.copyWith(
                       color: Theme.of(context).colorScheme.primaryFixedDim,
                       decoration: TextDecoration.lineThrough,
                     ),
@@ -147,8 +143,7 @@ class AdWidget extends StatelessWidget {
           SvgPicture.asset(AppAssets.fire),
           Text(
             "${AppLocalizations.of(context)!.sold_over} $soldCount+",
-            style: TextStyle(
-              fontSize: AppSizes.font10,
+            style: AppTypography.titleSmall.copyWith(
               color: Theme.of(context).colorScheme.primaryFixedDim,
             ),
           ),

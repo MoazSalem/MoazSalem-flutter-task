@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:otex/core/theme/app_typography.dart';
 
 class AppTheme {
   // prevent instantiation
@@ -20,5 +21,6 @@ class AppTheme {
       surface: Color(0xffffffff),
     ),
     fontFamily: 'Tajawal',
+    textTheme: AppTypography.textTheme,
   );
 }

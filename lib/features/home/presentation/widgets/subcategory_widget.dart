@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otex/core/theme/app_sizes.dart';
+import 'package:otex/core/theme/app_typography.dart';
 
 class SubcategoryWidget extends StatelessWidget {
   final String title;
@@ -31,13 +32,7 @@ class SubcategoryWidget extends StatelessWidget {
               width: AppSizes.subcategoryWidgetWidth,
               child: Image.asset(image, fit: BoxFit.fill),
             ),
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: AppSizes.font12,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
+            Text(title, style: AppTypography.labelMedium),
           ],
         ),
       ),

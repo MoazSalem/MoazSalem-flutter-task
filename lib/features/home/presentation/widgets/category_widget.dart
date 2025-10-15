@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otex/core/theme/app_sizes.dart';
+import 'package:otex/core/theme/app_typography.dart';
 
 class CategoryWidget extends StatelessWidget {
   final String title;
@@ -30,11 +31,10 @@ class CategoryWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: AppSizes.padding12),
             child: Text(
               title,
-              style: TextStyle(
+              style: AppTypography.labelLarge.copyWith(
                 color: isSelected
                     ? colorScheme.secondary
                     : colorScheme.primaryFixed,
-                fontWeight: FontWeight.w500,
               ),
             ),
           ),
