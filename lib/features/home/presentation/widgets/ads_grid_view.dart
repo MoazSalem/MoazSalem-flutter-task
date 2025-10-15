@@ -19,7 +19,6 @@ class AdsGridView extends StatelessWidget {
         ),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           childAspectRatio: AppSizes.adWidgetAspectRatio,
-          mainAxisExtent: AppSizes.adWidgetHeight,
           maxCrossAxisExtent: AppSizes.adWidgetWidth,
           mainAxisSpacing: AppSizes.p12,
           crossAxisSpacing: AppSizes.p12,

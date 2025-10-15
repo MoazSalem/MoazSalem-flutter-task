@@ -25,12 +25,12 @@ class AppSizes {
   static const double subcategoryWidgetHeight = 56;
   static const double subcategoryWidgetWidth = 73;
   static const double freeShippingBannerHeight = 32;
-  static const double adWidgetHeight = 360;
   static const double adWidgetWidth = 200;
-  static const double adWidgetAspectRatio = 2.278;
+  static const double adWidgetAspectRatio = 0.438981;
   static const double adWidgetImageContainerHeight = 215;
   static const double adWidgetSellerIconHeight = 22;
   static const double iconWidth = 20;
+  static const double iconSmall = 16;
   static const double iconLarge = 64;
   static const double navBarItemMinWidth = 80;
 

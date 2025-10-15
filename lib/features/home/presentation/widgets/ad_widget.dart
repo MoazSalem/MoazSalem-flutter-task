@@ -11,7 +11,6 @@ class AdWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: AppSizes.adWidgetHeight,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
@@ -21,6 +20,7 @@ class AdWidget extends StatelessWidget {
         ),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _buildImageContainer(context, image: AppAssets.getAdImage(index: 1)),
           SizedBox(height: AppSizes.p8),
@@ -36,7 +36,7 @@ class AdWidget extends StatelessWidget {
             originalPrice: "60,000,000",
             currency: AppLocalizations.of(context)!.egp,
           ),
-          SizedBox(height: AppSizes.p4),
+          SizedBox(height: AppSizes.p8),
           _buildSoldOverRow(context, soldCount: "3.3k"),
 
           _buildSellerInfoRow(context),
@@ -45,29 +45,28 @@ class AdWidget extends StatelessWidget {
     );
   }
 
-  Container _buildImageContainer(
-    BuildContext context, {
-    required String image,
-  }) {
-    return Container(
-      height: AppSizes.adWidgetImageContainerHeight,
-      color: Theme.of(context).colorScheme.primaryContainer,
-      child: Center(
-        child: Image.asset(
-          image,
-          errorBuilder: (context, error, stackTrace) {
-            return const Icon(
-              Icons.error,
-              color: Colors.red,
-              size: AppSizes.iconLarge,
-            );
-          },
+  Widget _buildImageContainer(BuildContext context, {required String image}) {
+    return Flexible(
+      flex: 7,
+      child: Container(
+        color: Theme.of(context).colorScheme.primaryContainer,
+        child: Center(
+          child: Image.asset(
+            image,
+            errorBuilder: (context, error, stackTrace) {
+              return const Icon(
+                Icons.error,
+                color: Colors.red,
+                size: AppSizes.iconLarge,
+              );
+            },
+          ),
         ),
       ),
     );
   }
 
-  Padding _buildTitleRow(
+  Widget _buildTitleRow(
     BuildContext context, {
     required String title,
     bool isDiscounted = false,
@@ -92,7 +91,7 @@ class AdWidget extends StatelessWidget {
     );
   }
 
-  Padding _buildPriceRow(
+  Widget _buildPriceRow(
     BuildContext context, {
     required final String discountedPrice,
     required final String originalPrice,
@@ -134,13 +133,13 @@ class AdWidget extends StatelessWidget {
     );
   }
 
-  Padding _buildSoldOverRow(BuildContext context, {required String soldCount}) {
+  Widget _buildSoldOverRow(BuildContext context, {required String soldCount}) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSizes.p8),
       child: Row(
         spacing: AppSizes.p4,
         children: [
-          SvgPicture.asset(AppAssets.fire),
+          SvgPicture.asset(AppAssets.fire, height: AppSizes.iconSmall),
           Text(
             "${AppLocalizations.of(context)!.sold_over} $soldCount+",
             style: AppTypography.titleSmall.copyWith(
@@ -152,8 +151,9 @@ class AdWidget extends StatelessWidget {
     );
   }
 
-  Expanded _buildSellerInfoRow(BuildContext context) {
-    return Expanded(
+  Widget _buildSellerInfoRow(BuildContext context) {
+    return Flexible(
+      flex: 2,
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Padding(
