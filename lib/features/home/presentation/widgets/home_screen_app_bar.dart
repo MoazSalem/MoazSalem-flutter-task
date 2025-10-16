@@ -17,12 +17,7 @@ class HomeScreenAppBar extends StatelessWidget {
       titleSpacing: AppSizes.p16,
       title: Padding(
         padding: EdgeInsets.only(top: AppSizes.p40),
-        child: Text(
-          locale.explore_deals,
-          style: AppTypography.headlineSmall!.copyWith(
-            color: Theme.of(context).colorScheme.primary,
-          ),
-        ),
+        child: Text(locale.explore_deals, style: AppTypography.headlineSmall),
       ),
       actions: [
         InkWell(
@@ -35,7 +30,7 @@ class HomeScreenAppBar extends StatelessWidget {
             children: [
               Text(
                 locale.all,
-                style: AppTypography.headlineMedium!.copyWith(
+                style: AppTypography.headlineMedium.copyWith(
                   color: Theme.of(context).colorScheme.primaryFixedDim,
                 ),
               ),

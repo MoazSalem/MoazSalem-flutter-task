@@ -80,7 +80,7 @@ class AdWidget extends StatelessWidget {
               title,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: AppTypography.titleMedium!.copyWith(
+              style: AppTypography.titleMedium.copyWith(
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),
@@ -106,7 +106,7 @@ class AdWidget extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               text: TextSpan(
-                style: AppTypography.titleMedium!.copyWith(
+                style: AppTypography.titleMedium.copyWith(
                   color: Theme.of(context).colorScheme.secondaryFixed,
                 ),
                 children: [
@@ -114,7 +114,7 @@ class AdWidget extends StatelessWidget {
                   TextSpan(text: "$currency/"),
                   TextSpan(
                     text: originalPrice,
-                    style: AppTypography.titleMedium!.copyWith(
+                    style: AppTypography.titleMedium.copyWith(
                       color: Theme.of(context).colorScheme.primaryFixedDim,
                       decoration: TextDecoration.lineThrough,
                     ),

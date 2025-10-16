@@ -19,8 +19,10 @@ class AppTheme {
       tertiaryFixed: Color(0xFF3A813F),
       outline: Color(0x16000000),
       surface: Color(0xffffffff),
+      onSurface: Color(0xff090F1F),
     ),
+
     fontFamily: 'Tajawal',
-    textTheme: AppTypography.textTheme,
+    textTheme: AppTypography.lightTextTheme,
   );
 }

@@ -33,7 +33,7 @@ class FilterScreenAppBar extends StatelessWidget
           onPressed: restoreDefaultFunction,
           child: Text(
             locale.bt_default,
-            style: AppTypography.titleLarge!.copyWith(
+            style: AppTypography.titleLarge.copyWith(
               color: Theme.of(context).colorScheme.tertiary,
             ),
           ),
