@@ -19,6 +19,11 @@ class AppAssets {
   static const String close = 'assets/images/svg/close.svg';
   static const String location = 'assets/images/svg/location.svg';
   static const String realEstate = 'assets/images/svg/real_estate.svg';
+  static const String perkTime = 'assets/images/svg/perk_time.svg';
+  static const String perkRocket = 'assets/images/svg/perk_rocket.svg';
+  static const String perkPin = 'assets/images/svg/perk_pin.svg';
+  static const String perkGlobe = 'assets/images/svg/perk_globe.svg';
+  static const String perkSpecial = 'assets/images/svg/perk_special.svg';
 
   static String getSubcategoryImage({required int index}) {
     return 'assets/images/png/subcategory_$index.png';

@@ -5,9 +5,8 @@ import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/core/theme/app_typography.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
-class ProfileScreenAppBar extends StatelessWidget
-    implements PreferredSizeWidget {
-  const ProfileScreenAppBar({super.key});
+class PlansScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const PlansScreenAppBar({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(AppSizes.toolbarHeight);

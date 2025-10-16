@@ -4,16 +4,7 @@ class AppSizes {
   // prevent instantiation
   AppSizes._();
 
-  // Paddings
-  static double get p4 => 4.sp.clamp(4, 6);
-  static double get p8 => 8.sp.clamp(8, 10);
-  static double get p12 => 12.sp.clamp(12, 14);
-  static double get p16 => 16.sp.clamp(16, 20);
-  static double get p18 => 18.sp.clamp(18, 22);
-  static double get p20 => 20.sp.clamp(20, 24);
-  static double get p24 => 24.sp.clamp(24, 28);
-  static double get p40 => 40.sp.clamp(40, 44);
-
+  // Const Values for UI Elements
   static const double smallRoundedCorner = 4;
   static const double normalRoundedCorner = 8;
   static const double borderWidth = 1;
@@ -41,9 +32,24 @@ class AppSizes {
   static const double chipMinWidth = 30;
   static const double pi = 3.14;
   static const double arrowForward2Width = 8;
+  static const double cardElevation = 4;
+  static const double underlineHeight = 2.5;
+  static const double underlineWidth = 85;
 
+  // Dynamic Values for UI Elements
   static double get customSearchButtonHeight => 44.sp.clamp(44, 54);
 
+  // Dynamic Padding values
+  static double get p4 => 4.sp.clamp(4, 6);
+  static double get p8 => 8.sp.clamp(8, 10);
+  static double get p12 => 12.sp.clamp(12, 14);
+  static double get p16 => 16.sp.clamp(16, 20);
+  static double get p18 => 18.sp.clamp(18, 22);
+  static double get p20 => 20.sp.clamp(20, 24);
+  static double get p24 => 24.sp.clamp(24, 28);
+  static double get p40 => 40.sp.clamp(40, 44);
+
+  // Dynamic Font Sizes
   static double get font10 => 10.sp.clamp(10, 12);
   static double get font12 => 12.sp.clamp(12, 14);
   static double get font14 => 14.sp.clamp(14, 16);
