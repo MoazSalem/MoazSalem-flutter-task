@@ -24,5 +24,17 @@
   "any": "أى",
   "twin_house": "توين هاوس",
   "separate_villa": "فيلا منفصلة",
-  "town_house": "تاون هاوس"
+  "town_house": "تاون هاوس",
+  "num_rooms": "عدد الغرف",
+  "more_than_5": "5+ غرف",
+  "two_rooms": "غرفتين",
+  "rooms": "{numOfRooms} غرف",
+  "@rooms": {
+    "placeholders": {
+      "Rooms": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  }
 }

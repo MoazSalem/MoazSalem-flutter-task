@@ -247,6 +247,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Town House'**
   String get town_house;
+
+  /// No description provided for @num_rooms.
+  ///
+  /// In en, this message translates to:
+  /// **'Number of Rooms'**
+  String get num_rooms;
+
+  /// No description provided for @more_than_5.
+  ///
+  /// In en, this message translates to:
+  /// **'5+ Rooms'**
+  String get more_than_5;
+
+  /// No description provided for @two_rooms.
+  ///
+  /// In en, this message translates to:
+  /// **'2 Rooms'**
+  String get two_rooms;
+
+  /// No description provided for @rooms.
+  ///
+  /// In en, this message translates to:
+  /// **'{numOfRooms} Rooms'**
+  String rooms(int numOfRooms);
 }
 
 class _AppLocalizationsDelegate

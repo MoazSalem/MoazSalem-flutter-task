@@ -24,5 +24,17 @@
   "any": "Any",
   "twin_house": "Twin House",
   "separate_villa": "Separate Villa",
-  "town_house": "Town House"
+  "town_house": "Town House",
+  "num_rooms": "Number of Rooms",
+  "more_than_5": "5+ Rooms",
+  "two_rooms": "2 Rooms",
+  "rooms": "{numOfRooms} Rooms",
+  "@rooms": {
+    "placeholders": {
+      "numOfRooms": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  }
 }

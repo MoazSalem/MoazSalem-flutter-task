@@ -82,4 +82,18 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get town_house => 'تاون هاوس';
+
+  @override
+  String get num_rooms => 'عدد الغرف';
+
+  @override
+  String get more_than_5 => '5+ غرف';
+
+  @override
+  String get two_rooms => 'غرفتين';
+
+  @override
+  String rooms(int numOfRooms) {
+    return '$numOfRooms غرف';
+  }
 }
