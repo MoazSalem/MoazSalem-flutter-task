@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/features/filter/presentation/widgets/custom_text_form_field.dart';
-import 'package:otex/features/filter/presentation/widgets/section_title.dart';
+import 'package:otex/features/filter/presentation/widgets/section_widget.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class MonthlyInstallmentsSection extends StatelessWidget {
@@ -9,11 +9,9 @@ class MonthlyInstallmentsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
+    return SectionWidget(
+      title: AppLocalizations.of(context)!.month_install,
       children: [
-        SectionTitle(title: AppLocalizations.of(context)!.month_install),
         Padding(
           padding: EdgeInsets.all(AppSizes.p8),
           child: Row(
@@ -24,7 +22,6 @@ class MonthlyInstallmentsSection extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(width: AppSizes.p8),
       ],
     );
   }

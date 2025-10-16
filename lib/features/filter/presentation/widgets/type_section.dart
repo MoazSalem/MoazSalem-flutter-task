@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/features/filter/presentation/widgets/filter_chips_wrap.dart';
-import 'package:otex/features/filter/presentation/widgets/section_title.dart';
+import 'package:otex/features/filter/presentation/widgets/section_widget.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class TypeSection extends StatelessWidget {
@@ -10,11 +9,9 @@ class TypeSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context)!;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
+    return SectionWidget(
+      title: locale.type,
       children: [
-        SectionTitle(title: locale.type),
         FilterChipsWrap(
           filterOptions: [
             locale.all,
@@ -23,7 +20,6 @@ class TypeSection extends StatelessWidget {
             locale.town_house,
           ],
         ),
-        SizedBox(height: AppSizes.p8),
       ],
     );
   }

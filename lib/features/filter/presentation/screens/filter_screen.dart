@@ -15,9 +15,9 @@ class FilterScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CategorySection(),
-            MonthlyInstallmentsSection(),
-            TypeSection(),
+            const CategorySection(),
+            const MonthlyInstallmentsSection(),
+            const TypeSection(),
           ],
         ),
       ),
