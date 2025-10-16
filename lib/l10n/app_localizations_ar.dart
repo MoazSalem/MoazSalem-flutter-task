@@ -64,4 +64,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get egypt => 'مصر';
+
+  @override
+  String get month_install => 'الأقساط الشهرية';
 }

@@ -64,4 +64,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get egypt => 'Egypt';
+
+  @override
+  String get month_install => 'Month Installments';
 }

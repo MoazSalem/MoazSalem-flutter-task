@@ -211,6 +211,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Egypt'**
   String get egypt;
+
+  /// No description provided for @month_install.
+  ///
+  /// In en, this message translates to:
+  /// **'Month Installments'**
+  String get month_install;
 }
 
 class _AppLocalizationsDelegate

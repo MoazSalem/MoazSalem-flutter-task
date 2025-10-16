@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:otex/core/theme/app_assets.dart';
 import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/core/theme/app_typography.dart';
+import 'package:otex/features/filter/presentation/widgets/section_title.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class CategorySection extends StatelessWidget {
@@ -14,16 +15,9 @@ class CategorySection extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: AppSizes.p16),
-          child: Text(
-            locale.category,
-            style: AppTypography.headlineSmall.copyWith(
-              color: colorScheme.primaryFixedDim,
-            ),
-          ),
-        ),
+        SectionTitle(title: locale.category),
         ListTile(
           contentPadding: EdgeInsets.symmetric(horizontal: AppSizes.p20),
           leading: SvgPicture.asset(AppAssets.realEstate),
@@ -67,6 +61,7 @@ class CategorySection extends StatelessWidget {
           ),
         ),
         Divider(thickness: AppSizes.dividerThickness),
+        SizedBox(height: AppSizes.p8),
       ],
     );
   }

@@ -15,6 +15,7 @@ class AppSizes {
   static double get p40 => 40.sp.clamp(40, 44);
 
   static const double smallRoundedCorner = 4;
+  static const double normalRoundedCorner = 8;
   static const double borderWidth = 1;
   static const double toolbarHeight = 100;
   static const double categoryBarHeight = 40;
