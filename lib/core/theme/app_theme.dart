@@ -17,6 +17,7 @@ class AppTheme {
       secondaryFixedDim: Color(0x0DF95B1C),
       tertiary: Color(0xFF0062E2),
       tertiaryFixed: Color(0xFF3A813F),
+      tertiaryFixedDim: Color(0xFF3B4CF2),
       outline: Color(0x16000000),
       surface: Color(0xffffffff),
       onSurface: Color(0xff090F1F),

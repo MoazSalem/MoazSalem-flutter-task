@@ -3,6 +3,7 @@ class AppAssets {
   AppAssets._();
 
   static const String arrowForward = 'assets/images/svg/arrow_forward.svg';
+  static const String arrowForward2 = 'assets/images/svg/arrow_forward_2.svg';
   static const String check = 'assets/images/svg/check.svg';
   static const String discount = 'assets/images/svg/discount.svg';
   static const String favorite = 'assets/images/svg/favorite.svg';

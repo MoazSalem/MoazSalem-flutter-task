@@ -46,4 +46,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bt_default => 'Back to Default';
+
+  @override
+  String get category => 'Category';
+
+  @override
+  String get real_estate => 'Real Estate';
+
+  @override
+  String get villa_s => 'Villas for Sale';
+
+  @override
+  String get change => 'Change';
+
+  @override
+  String get location => 'Location';
+
+  @override
+  String get egypt => 'Egypt';
 }

@@ -11,5 +11,11 @@
   "my_ads" : "أعلاناتى",
   "account" : "حسابى",
   "filter" : "فلترة",
-  "bt_default" : "رجوع للأفتراضى"
+  "bt_default" : "رجوع للأفتراضى",
+  "category" : "الفئة",
+  "real_estate" : "عقارات",
+  "villa_s" : "فلل للبيع",
+  "change" : "تغيير",
+  "location" : "الموقع",
+  "egypt" : "مصر"
 }

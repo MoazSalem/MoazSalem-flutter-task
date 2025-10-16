@@ -11,5 +11,11 @@
   "my_ads" : "My Ads",
   "account" : "Account",
   "filter" : "Filter",
-  "bt_default" : "Back to Default"
+  "bt_default" : "Back to Default",
+  "category" : "Category",
+  "real_estate" : "Real Estate",
+  "villa_s" : "Villas for Sale",
+  "change" : "Change",
+  "location" : "Location",
+  "egypt" : "Egypt"
 }

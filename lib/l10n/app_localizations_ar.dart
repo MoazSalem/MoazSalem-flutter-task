@@ -46,4 +46,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get bt_default => 'رجوع للأفتراضى';
+
+  @override
+  String get category => 'الفئة';
+
+  @override
+  String get real_estate => 'عقارات';
+
+  @override
+  String get villa_s => 'فلل للبيع';
+
+  @override
+  String get change => 'تغيير';
+
+  @override
+  String get location => 'الموقع';
+
+  @override
+  String get egypt => 'مصر';
 }

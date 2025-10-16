@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:otex/features/filter/presentation/widgets/category_section.dart';
 import 'package:otex/features/filter/presentation/widgets/filter_screen_app_bar.dart';
 
 class FilterScreen extends StatelessWidget {
@@ -8,7 +9,12 @@ class FilterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: FilterScreenAppBar(restoreDefaultFunction: () {}),
-      body: SingleChildScrollView(child: Column(children: [])),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [CategorySection()],
+        ),
+      ),
     );
   }
 }

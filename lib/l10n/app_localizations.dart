@@ -175,6 +175,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Back to Default'**
   String get bt_default;
+
+  /// No description provided for @category.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get category;
+
+  /// No description provided for @real_estate.
+  ///
+  /// In en, this message translates to:
+  /// **'Real Estate'**
+  String get real_estate;
+
+  /// No description provided for @villa_s.
+  ///
+  /// In en, this message translates to:
+  /// **'Villas for Sale'**
+  String get villa_s;
+
+  /// No description provided for @change.
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get change;
+
+  /// No description provided for @location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get location;
+
+  /// No description provided for @egypt.
+  ///
+  /// In en, this message translates to:
+  /// **'Egypt'**
+  String get egypt;
 }
 
 class _AppLocalizationsDelegate

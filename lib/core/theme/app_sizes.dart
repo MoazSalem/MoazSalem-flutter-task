@@ -31,8 +31,10 @@ class AppSizes {
   static const double adWidgetSellerIconHeight = 22;
   static const double iconWidth = 20;
   static const double iconSmall = 16;
+  static const double iconNormal = 24;
   static const double iconLarge = 64;
   static const double navBarItemMinWidth = 80;
+  static const double dividerThickness = 0.5;
 
   static double get font10 => 10.sp.clamp(10, 12);
   static double get font12 => 12.sp.clamp(12, 14);
