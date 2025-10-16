@@ -96,4 +96,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String rooms(int numOfRooms) {
     return '$numOfRooms Rooms';
   }
+
+  @override
+  String get price => 'Price';
+
+  @override
+  String get lowest_price => 'Lowest Price';
+
+  @override
+  String get highest_price => 'Highest Price';
 }

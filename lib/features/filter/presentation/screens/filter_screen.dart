@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:otex/features/filter/presentation/widgets/category_section.dart';
 import 'package:otex/features/filter/presentation/widgets/filter_screen_app_bar.dart';
 import 'package:otex/features/filter/presentation/widgets/monthly_installments_section.dart';
+import 'package:otex/features/filter/presentation/widgets/price_section.dart';
 import 'package:otex/features/filter/presentation/widgets/rooms_section.dart';
 import 'package:otex/features/filter/presentation/widgets/type_section.dart';
 
@@ -20,6 +21,7 @@ class FilterScreen extends StatelessWidget {
             const MonthlyInstallmentsSection(),
             const TypeSection(),
             const RoomsSection(),
+            const PriceSection(),
           ],
         ),
       ),

@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:otex/core/theme/app_sizes.dart';
+import 'package:otex/core/theme/app_typography.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key});
+  final String? label;
+  const CustomTextFormField({super.key, this.label});
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     return TextFormField(
       decoration: InputDecoration(
+        labelText: label,
+        labelStyle: AppTypography.labelLarge.copyWith(
+          color: colorScheme.primaryFixedDim,
+        ),
         filled: true,
         fillColor: colorScheme.surface,
         contentPadding: EdgeInsets.symmetric(

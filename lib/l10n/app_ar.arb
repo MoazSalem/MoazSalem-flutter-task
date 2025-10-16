@@ -36,5 +36,8 @@
         "example": "3"
       }
     }
-  }
+  },
+  "price" : "السعر",
+  "lowest_price" : "أقل سعر",
+  "highest_price" : "أعلى سعر"
 }

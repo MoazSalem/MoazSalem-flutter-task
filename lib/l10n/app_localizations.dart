@@ -271,6 +271,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{numOfRooms} Rooms'**
   String rooms(int numOfRooms);
+
+  /// No description provided for @price.
+  ///
+  /// In en, this message translates to:
+  /// **'Price'**
+  String get price;
+
+  /// No description provided for @lowest_price.
+  ///
+  /// In en, this message translates to:
+  /// **'Lowest Price'**
+  String get lowest_price;
+
+  /// No description provided for @highest_price.
+  ///
+  /// In en, this message translates to:
+  /// **'Highest Price'**
+  String get highest_price;
 }
 
 class _AppLocalizationsDelegate

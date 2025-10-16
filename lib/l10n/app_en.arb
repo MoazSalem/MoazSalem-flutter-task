@@ -36,5 +36,8 @@
         "example": "3"
       }
     }
-  }
+  },
+  "price" : "Price",
+  "lowest_price" : "Lowest Price",
+  "highest_price" : "Highest Price"
 }

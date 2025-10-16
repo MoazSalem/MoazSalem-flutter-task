@@ -96,4 +96,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String rooms(int numOfRooms) {
     return '$numOfRooms غرف';
   }
+
+  @override
+  String get price => 'السعر';
+
+  @override
+  String get lowest_price => 'أقل سعر';
+
+  @override
+  String get highest_price => 'أعلى سعر';
 }
