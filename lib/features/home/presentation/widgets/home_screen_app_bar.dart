@@ -36,7 +36,7 @@ class HomeScreenAppBar extends StatelessWidget {
               ),
               // rotate arrow based on locale
               Transform.rotate(
-                angle: locale.localeName == 'en' ? 3.14 : 0,
+                angle: locale.localeName == 'en' ? AppSizes.pi : 0,
                 child: SvgPicture.asset(AppAssets.arrowForward),
               ),
             ],

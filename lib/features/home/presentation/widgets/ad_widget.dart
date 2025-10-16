@@ -22,30 +22,30 @@ class AdWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          _buildImageContainer(context, image: AppAssets.getAdImage(index: 1)),
+          _ImageContainer(image: AppAssets.getAdImage(index: 1)),
           SizedBox(height: AppSizes.p8),
-          _buildTitleRow(
-            context,
-            title: "جاكيت من الصوف مناسب",
-            isDiscounted: true,
-          ),
+          const _TitleRow(title: "جاكيت من الصوف مناسب", isDiscounted: true),
           SizedBox(height: AppSizes.p8),
-          _buildPriceRow(
-            context,
+          _PriceRow(
             discountedPrice: "32,000,000",
             originalPrice: "60,000,000",
             currency: AppLocalizations.of(context)!.egp,
           ),
           SizedBox(height: AppSizes.p8),
-          _buildSoldOverRow(context, soldCount: "3.3k"),
-
-          _buildSellerInfoRow(context),
+          const _SoldOverRow(soldCount: "3.3k"),
+          const _SellerInfoRow(),
         ],
       ),
     );
   }
+}
 
-  Widget _buildImageContainer(BuildContext context, {required String image}) {
+class _ImageContainer extends StatelessWidget {
+  final String image;
+  const _ImageContainer({required this.image});
+
+  @override
+  Widget build(BuildContext context) {
     return Flexible(
       flex: 7,
       child: Container(
@@ -65,12 +65,15 @@ class AdWidget extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buildTitleRow(
-    BuildContext context, {
-    required String title,
-    bool isDiscounted = false,
-  }) {
+class _TitleRow extends StatelessWidget {
+  final String title;
+  final bool isDiscounted;
+  const _TitleRow({required this.title, this.isDiscounted = false});
+
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSizes.p8),
       child: Row(
@@ -90,13 +93,20 @@ class AdWidget extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buildPriceRow(
-    BuildContext context, {
-    required final String discountedPrice,
-    required final String originalPrice,
-    required final String currency,
-  }) {
+class _PriceRow extends StatelessWidget {
+  final String discountedPrice;
+  final String originalPrice;
+  final String currency;
+  const _PriceRow({
+    required this.discountedPrice,
+    required this.originalPrice,
+    required this.currency,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSizes.p8),
       child: Row(
@@ -132,26 +142,34 @@ class AdWidget extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buildSoldOverRow(BuildContext context, {required String soldCount}) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSizes.p8),
-      child: Row(
-        spacing: AppSizes.p4,
-        children: [
-          SvgPicture.asset(AppAssets.fire, height: AppSizes.iconSmall),
-          Text(
-            "${AppLocalizations.of(context)!.sold_over} $soldCount+",
-            style: AppTypography.titleSmall.copyWith(
-              color: Theme.of(context).colorScheme.primaryFixedDim,
-            ),
+class _SoldOverRow extends StatelessWidget {
+  final String soldCount;
+  const _SoldOverRow({required this.soldCount});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      spacing: AppSizes.p4,
+      children: [
+        SvgPicture.asset(AppAssets.fire, height: AppSizes.iconSmall),
+        Text(
+          "${AppLocalizations.of(context)!.sold_over} $soldCount+",
+          style: AppTypography.titleSmall.copyWith(
+            color: Theme.of(context).colorScheme.primaryFixedDim,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
+}
 
-  Widget _buildSellerInfoRow(BuildContext context) {
+class _SellerInfoRow extends StatelessWidget {
+  const _SellerInfoRow();
+
+  @override
+  Widget build(BuildContext context) {
     return Flexible(
       flex: 2,
       child: Align(
