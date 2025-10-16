@@ -135,4 +135,58 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get choose_from_bellow =>
       'أختار من باقات التمييز بل أسفل اللى تناسب أحتياجاتك';
+
+  @override
+  String get p_basic => 'أساسية';
+
+  @override
+  String get p_extra => 'أكسترا';
+
+  @override
+  String get p_plus => 'بلس';
+
+  @override
+  String get p_super => 'سوبر';
+
+  @override
+  String get highest_views => 'أعلى مشاهدات';
+
+  @override
+  String get best_value => 'أفضل قيمة مقابل سعر';
+
+  @override
+  String get in_48_hours => 'خلال ال48 ساعة القادمة';
+
+  @override
+  String get time_the_views => 'ضعف عدد المشاهدات';
+
+  @override
+  String get perk_0 => 'صلاحية الأعلان 30 يوم';
+
+  @override
+  String get perk_1 => 'رفع لأعلى القائمة كل 2 يوم';
+
+  @override
+  String get perk_2 => 'تثبيت فى مقاول صحى';
+
+  @override
+  String get perk_3 => 'ظهور فى كل محافظات مصر';
+
+  @override
+  String get perk_4 => 'أعلان مميز';
+
+  @override
+  String get perk_5 => 'تثبيت فى مقاول صحى فى الجهراء';
+
+  @override
+  String get perk_6 => 'تثبيت فى مقاول صحى';
+
+  @override
+  String get plans_for_you => 'باقات مخصصة لك';
+
+  @override
+  String get contact_us => 'تواصل معنا لأختيار الباقة المناسبة لك';
+
+  @override
+  String get sales_team => 'فريق المبيعات';
 }

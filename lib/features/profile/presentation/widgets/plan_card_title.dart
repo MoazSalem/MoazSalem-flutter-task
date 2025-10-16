@@ -3,20 +3,18 @@ import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/core/theme/app_typography.dart';
 
 class PlanCardTitle extends StatelessWidget {
+  final String planName;
   final bool isSelected;
-  final bool isHighestViews;
-  final bool isBestValue;
   const PlanCardTitle({
     super.key,
     required this.isSelected,
-    required this.isHighestViews,
-    required this.isBestValue,
+    required this.planName,
   });
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final color = isHighestViews || isBestValue
+    final color = isSelected
         ? colorScheme.tertiaryFixedDim
         : colorScheme.primary;
     return Row(
@@ -26,15 +24,22 @@ class PlanCardTitle extends StatelessWidget {
           children: [
             Checkbox(
               checkColor: colorScheme.surface,
-              fillColor: WidgetStateProperty.all(color),
+              fillColor: WidgetStateProperty.resolveWith((
+                Set<WidgetState> states,
+              ) {
+                if (states.contains(WidgetState.selected)) {
+                  return color;
+                }
+                return null;
+              }),
               value: isSelected,
               onChanged: (value) {},
               visualDensity: VisualDensity.compact,
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 8.0),
+              padding: EdgeInsets.only(top: AppSizes.p4),
               child: Text(
-                'أساسية',
+                planName,
                 style: AppTypography.titleLarge.copyWith(color: color),
               ),
             ),

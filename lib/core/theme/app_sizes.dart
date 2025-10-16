@@ -28,6 +28,7 @@ class AppSizes {
   static const double iconLarge = 64;
   static const double navBarItemMinWidth = 80;
   static const double dividerThickness = 0.5;
+  static const double dividerLargeThickness = 1.5;
   static const double chipBorderWidth = 2;
   static const double chipMinWidth = 30;
   static const double pi = 3.14;

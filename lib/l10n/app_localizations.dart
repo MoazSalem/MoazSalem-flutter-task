@@ -343,6 +343,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose the distinction plans that suit you from below'**
   String get choose_from_bellow;
+
+  /// No description provided for @p_basic.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic'**
+  String get p_basic;
+
+  /// No description provided for @p_extra.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra'**
+  String get p_extra;
+
+  /// No description provided for @p_plus.
+  ///
+  /// In en, this message translates to:
+  /// **'Plus'**
+  String get p_plus;
+
+  /// No description provided for @p_super.
+  ///
+  /// In en, this message translates to:
+  /// **'Super'**
+  String get p_super;
+
+  /// No description provided for @highest_views.
+  ///
+  /// In en, this message translates to:
+  /// **'Highest Views'**
+  String get highest_views;
+
+  /// No description provided for @best_value.
+  ///
+  /// In en, this message translates to:
+  /// **'Best Value for Money'**
+  String get best_value;
+
+  /// No description provided for @in_48_hours.
+  ///
+  /// In en, this message translates to:
+  /// **'In the Upcoming 48 Hours'**
+  String get in_48_hours;
+
+  /// No description provided for @time_the_views.
+  ///
+  /// In en, this message translates to:
+  /// **'Times The Views'**
+  String get time_the_views;
+
+  /// No description provided for @perk_0.
+  ///
+  /// In en, this message translates to:
+  /// **'Ad valid for 30 days'**
+  String get perk_0;
+
+  /// No description provided for @perk_1.
+  ///
+  /// In en, this message translates to:
+  /// **'Raise to the top of the list every 2 days'**
+  String get perk_1;
+
+  /// No description provided for @perk_2.
+  ///
+  /// In en, this message translates to:
+  /// **'Pinned in a sanitary contractor'**
+  String get perk_2;
+
+  /// No description provided for @perk_3.
+  ///
+  /// In en, this message translates to:
+  /// **'Appears in all governorates of Egypt'**
+  String get perk_3;
+
+  /// No description provided for @perk_4.
+  ///
+  /// In en, this message translates to:
+  /// **'Featured Ad'**
+  String get perk_4;
+
+  /// No description provided for @perk_5.
+  ///
+  /// In en, this message translates to:
+  /// **'Pinned in a sanitary contractor in Jahra'**
+  String get perk_5;
+
+  /// No description provided for @perk_6.
+  ///
+  /// In en, this message translates to:
+  /// **'Pinned in a sanitary contractor'**
+  String get perk_6;
+
+  /// No description provided for @plans_for_you.
+  ///
+  /// In en, this message translates to:
+  /// **'Plans Just for You'**
+  String get plans_for_you;
+
+  /// No description provided for @contact_us.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Us to choose the plan that suits you'**
+  String get contact_us;
+
+  /// No description provided for @sales_team.
+  ///
+  /// In en, this message translates to:
+  /// **'Sales Team'**
+  String get sales_team;
 }
 
 class _AppLocalizationsDelegate

@@ -32,4 +32,21 @@ class AppAssets {
   static String getAdImage({required int index}) {
     return 'assets/images/png/ad_$index.png';
   }
+
+  static String getPerkIcon({required int index}) {
+    switch (index) {
+      case 0:
+        return perkTime;
+      case 1:
+        return perkRocket;
+      case 2:
+        return perkPin;
+      case 3:
+        return perkGlobe;
+      case 4:
+        return perkSpecial;
+      default:
+        return perkPin;
+    }
+  }
 }

@@ -14,7 +14,10 @@ class PlansScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context)!;
+    final colorScheme = Theme.of(context).colorScheme;
     return AppBar(
+      backgroundColor: colorScheme.surface,
+      surfaceTintColor: Colors.transparent,
       toolbarHeight: AppSizes.toolbarHeight,
       titleSpacing: 0,
       title: Column(
@@ -41,7 +44,7 @@ class PlansScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: Text(
               locale.choose_from_bellow,
               style: AppTypography.bodyLarge.copyWith(
-                color: Theme.of(context).colorScheme.primaryFixedDim,
+                color: colorScheme.primaryFixedDim,
               ),
             ),
           ),

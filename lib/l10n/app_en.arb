@@ -56,5 +56,23 @@
       }
     },
     "choose_plans": "Choose the Plans that Suit You",
-    "choose_from_bellow": "Choose the distinction plans that suit you from below"
+    "choose_from_bellow": "Choose the distinction plans that suit you from below",
+    "p_basic": "Basic",
+    "p_extra": "Extra",
+    "p_plus": "Plus",
+    "p_super": "Super",
+    "highest_views": "Highest Views",
+    "best_value": "Best Value for Money",
+    "in_48_hours": "In the Upcoming 48 Hours",
+    "time_the_views": "Times The Views",
+    "perk_0":"Ad valid for 30 days",
+    "perk_1":"Raise to the top of the list every 2 days",
+    "perk_2":"Pinned in a sanitary contractor",
+    "perk_3":"Appears in all governorates of Egypt",
+    "perk_4":"Featured Ad",
+    "perk_5":"Pinned in a sanitary contractor in Jahra",
+    "perk_6":"Pinned in a sanitary contractor",
+    "plans_for_you": "Plans Just for You",
+    "contact_us": "Contact Us to choose the plan that suits you",
+    "sales_team": "Sales Team"
 }

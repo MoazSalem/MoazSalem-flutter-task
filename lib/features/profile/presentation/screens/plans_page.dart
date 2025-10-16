@@ -2,21 +2,45 @@ import 'package:flutter/material.dart';
 import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/features/profile/presentation/widgets/plan_card_widget.dart';
 import 'package:otex/features/profile/presentation/widgets/plans_screen_app_bar.dart';
+import 'package:otex/l10n/app_localizations.dart';
 
 class PlansPage extends StatelessWidget {
   const PlansPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final locale = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: PlansScreenAppBar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: AppSizes.p16),
           child: Column(
+            spacing: AppSizes.p16,
             children: [
-              SizedBox(height: AppSizes.p8),
-              PlanCardWidget(isSelected: true),
+              PlanCardWidget(
+                planName: locale.p_basic,
+                perks: [0],
+                isSelected: false,
+              ),
+              PlanCardWidget(
+                planName: locale.p_extra,
+                perks: [0, 1, 2],
+                isSelected: false,
+              ),
+              PlanCardWidget(
+                planName: locale.p_plus,
+                perks: [0, 1, 2, 3, 4, 5, 6],
+                isSelected: true,
+                isBestValue: true,
+              ),
+              PlanCardWidget(
+                planName: locale.p_super,
+                perks: [0, 1, 2, 3, 4, 5, 6],
+                isSelected: false,
+                isHighestViews: true,
+              ),
+              SizedBox(height: AppSizes.p16),
             ],
           ),
         ),

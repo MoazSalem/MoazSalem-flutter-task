@@ -135,4 +135,58 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get choose_from_bellow =>
       'Choose the distinction plans that suit you from below';
+
+  @override
+  String get p_basic => 'Basic';
+
+  @override
+  String get p_extra => 'Extra';
+
+  @override
+  String get p_plus => 'Plus';
+
+  @override
+  String get p_super => 'Super';
+
+  @override
+  String get highest_views => 'Highest Views';
+
+  @override
+  String get best_value => 'Best Value for Money';
+
+  @override
+  String get in_48_hours => 'In the Upcoming 48 Hours';
+
+  @override
+  String get time_the_views => 'Times The Views';
+
+  @override
+  String get perk_0 => 'Ad valid for 30 days';
+
+  @override
+  String get perk_1 => 'Raise to the top of the list every 2 days';
+
+  @override
+  String get perk_2 => 'Pinned in a sanitary contractor';
+
+  @override
+  String get perk_3 => 'Appears in all governorates of Egypt';
+
+  @override
+  String get perk_4 => 'Featured Ad';
+
+  @override
+  String get perk_5 => 'Pinned in a sanitary contractor in Jahra';
+
+  @override
+  String get perk_6 => 'Pinned in a sanitary contractor';
+
+  @override
+  String get plans_for_you => 'Plans Just for You';
+
+  @override
+  String get contact_us => 'Contact Us to choose the plan that suits you';
+
+  @override
+  String get sales_team => 'Sales Team';
 }
