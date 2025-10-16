@@ -331,6 +331,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Watch {numOfResults}+ Result'**
   String watch_results(String numOfResults);
+
+  /// No description provided for @choose_plans.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the Plans that Suit You'**
+  String get choose_plans;
+
+  /// No description provided for @choose_from_bellow.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the distinction plans that suit you from below'**
+  String get choose_from_bellow;
 }
 
 class _AppLocalizationsDelegate

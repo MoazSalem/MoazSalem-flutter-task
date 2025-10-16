@@ -54,5 +54,7 @@
           "example": "10000"
         }
       }
-    }
+    },
+    "choose_plans": "Choose the Plans that Suit You",
+    "choose_from_bellow": "Choose the distinction plans that suit you from below"
 }

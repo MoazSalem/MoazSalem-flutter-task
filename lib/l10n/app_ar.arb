@@ -47,12 +47,14 @@
   "ready" : "جاهز",
   "under_const" : "قيد الإنشاء",
   "watch_results": "شاهد {numOfResults}+ نتائج",
-  "@watch_results": {
-    "placeholders": {
-      "numOfResults": {
-        "type": "String",
-        "example": "10,000"
-      }
-    }
-  }
+   "@watch_results": {
+     "placeholders": {
+       "numOfResults": {
+         "type": "String",
+         "example": "10,000"
+       }
+     }
+   },
+   "choose_plans": "أختار الباقات اللى تناسبك",
+   "choose_from_bellow": "أختار من باقات التمييز بل أسفل اللى تناسب أحتياجاتك"
 }

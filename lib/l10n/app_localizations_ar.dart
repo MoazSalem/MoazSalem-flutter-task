@@ -128,4 +128,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String watch_results(String numOfResults) {
     return 'شاهد $numOfResults+ نتائج';
   }
+
+  @override
+  String get choose_plans => 'أختار الباقات اللى تناسبك';
+
+  @override
+  String get choose_from_bellow =>
+      'أختار من باقات التمييز بل أسفل اللى تناسب أحتياجاتك';
 }
