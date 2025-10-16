@@ -217,6 +217,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Month Installments'**
   String get month_install;
+
+  /// No description provided for @type.
+  ///
+  /// In en, this message translates to:
+  /// **'Type'**
+  String get type;
+
+  /// No description provided for @any.
+  ///
+  /// In en, this message translates to:
+  /// **'Any'**
+  String get any;
+
+  /// No description provided for @twin_house.
+  ///
+  /// In en, this message translates to:
+  /// **'Twin House'**
+  String get twin_house;
+
+  /// No description provided for @separate_villa.
+  ///
+  /// In en, this message translates to:
+  /// **'Separate Villa'**
+  String get separate_villa;
+
+  /// No description provided for @town_house.
+  ///
+  /// In en, this message translates to:
+  /// **'Town House'**
+  String get town_house;
 }
 
 class _AppLocalizationsDelegate

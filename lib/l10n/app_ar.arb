@@ -18,5 +18,11 @@
   "change" : "تغيير",
   "location" : "الموقع",
   "egypt" : "مصر",
-  "month_install": "الأقساط الشهرية"
+  "month_install": "الأقساط الشهرية",
+  "type": "النوع",
+  "all": "الكل",
+  "any": "أى",
+  "twin_house": "توين هاوس",
+  "separate_villa": "فيلا منفصلة",
+  "town_house": "تاون هاوس"
 }

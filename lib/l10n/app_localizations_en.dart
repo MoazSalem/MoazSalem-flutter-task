@@ -67,4 +67,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get month_install => 'Month Installments';
+
+  @override
+  String get type => 'Type';
+
+  @override
+  String get any => 'Any';
+
+  @override
+  String get twin_house => 'Twin House';
+
+  @override
+  String get separate_villa => 'Separate Villa';
+
+  @override
+  String get town_house => 'Town House';
 }

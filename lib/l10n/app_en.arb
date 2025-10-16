@@ -18,5 +18,11 @@
   "change" : "Change",
   "location" : "Location",
   "egypt" : "Egypt",
-  "month_install": "Month Installments"
+  "month_install": "Month Installments",
+  "type": "Type",
+  "all": "All",
+  "any": "Any",
+  "twin_house": "Twin House",
+  "separate_villa": "Separate Villa",
+  "town_house": "Town House"
 }

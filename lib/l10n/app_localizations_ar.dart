@@ -67,4 +67,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get month_install => 'الأقساط الشهرية';
+
+  @override
+  String get type => 'النوع';
+
+  @override
+  String get any => 'أى';
+
+  @override
+  String get twin_house => 'توين هاوس';
+
+  @override
+  String get separate_villa => 'فيلا منفصلة';
+
+  @override
+  String get town_house => 'تاون هاوس';
 }
