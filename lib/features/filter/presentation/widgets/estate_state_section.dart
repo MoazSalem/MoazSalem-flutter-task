@@ -13,6 +13,7 @@ class EstateStateSection extends StatelessWidget {
       title: locale.estate_state,
       children: [
         FilterChipsWrap(
+        initialIndex: 1,
           filterOptions: [locale.any, locale.ready, locale.under_const],
         ),
       ],

@@ -13,6 +13,7 @@ class PaymentMethodSection extends StatelessWidget {
       title: locale.payment_method,
       children: [
         FilterChipsWrap(
+          initialIndex: 2,
           filterOptions: [locale.any, locale.installments, locale.cash],
         ),
       ],

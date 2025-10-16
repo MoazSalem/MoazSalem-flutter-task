@@ -13,6 +13,7 @@ class RoomsSection extends StatelessWidget {
       title: locale.num_rooms,
       children: [
         FilterChipsWrap(
+          initialIndex: 1,
           filterOptions: [
             locale.rooms(4),
             locale.more_than_5,

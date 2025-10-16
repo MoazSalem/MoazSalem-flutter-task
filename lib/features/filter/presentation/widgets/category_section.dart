@@ -35,7 +35,10 @@ class CategorySection extends StatelessWidget {
             ),
           ),
         ),
-        Divider(thickness: AppSizes.dividerThickness),
+        Divider(
+          thickness: AppSizes.dividerThickness,
+          color: colorScheme.outline,
+        ),
         ListTile(
           onTap: () {},
           contentPadding: EdgeInsets.symmetric(horizontal: AppSizes.p20),
@@ -54,12 +57,18 @@ class CategorySection extends StatelessWidget {
             width: AppSizes.iconNormal,
             child: // rotate arrow based on locale
             Transform.rotate(
-              angle: locale.localeName == 'en' ? 3.14 : 0,
-              child: SvgPicture.asset(AppAssets.arrowForward2),
+              angle: locale.localeName == 'en' ? AppSizes.pi : 0,
+              child: SvgPicture.asset(
+                AppAssets.arrowForward2,
+                width: AppSizes.arrowForward2Width,
+              ),
             ),
           ),
         ),
-        Divider(thickness: AppSizes.dividerThickness),
+        Divider(
+          thickness: AppSizes.dividerThickness,
+          color: colorScheme.outline,
+        ),
       ],
     );
   }

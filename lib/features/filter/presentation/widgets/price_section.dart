@@ -14,7 +14,10 @@ class PriceSection extends StatelessWidget {
       title: AppLocalizations.of(context)!.price,
       children: [
         Padding(
-          padding: EdgeInsets.all(AppSizes.p8),
+          padding: EdgeInsets.symmetric(
+            vertical: AppSizes.p8,
+            horizontal: AppSizes.p16,
+          ),
           child: Row(
             spacing: AppSizes.p8,
             children: [

@@ -35,38 +35,45 @@ class _FilterChipsWrapState extends State<FilterChipsWrap> {
         children: List.generate(widget.filterOptions.length, (index) {
           final bool isSelected = index == selectedIndex;
           final String label = widget.filterOptions[index];
-          return ChoiceChip(
-            labelPadding: EdgeInsets.symmetric(
-              vertical: AppSizes.chipBorderWidth,
+          return Theme(
+            // Change tap splash color for the choice chips
+            data: Theme.of(context).copyWith(
+              splashColor: colorScheme.tertiaryContainer,
+              highlightColor: colorScheme.tertiaryContainer,
             ),
-            label: ConstrainedBox(
-              constraints: BoxConstraints(minWidth: AppSizes.chipMinWidth),
-              child: Text(
-                textAlign: TextAlign.center,
-                widget.filterOptions[index],
-                style: AppTypography.labelLarge.copyWith(
-                  color: isSelected
-                      ? colorScheme.onTertiaryContainer
-                      : colorScheme.primaryFixedDim,
+            child: ChoiceChip(
+              labelPadding: EdgeInsets.symmetric(
+                vertical: AppSizes.chipBorderWidth,
+              ),
+              label: ConstrainedBox(
+                constraints: BoxConstraints(minWidth: AppSizes.chipMinWidth),
+                child: Text(
+                  textAlign: TextAlign.center,
+                  widget.filterOptions[index],
+                  style: AppTypography.labelLarge.copyWith(
+                    color: isSelected
+                        ? colorScheme.onTertiaryContainer
+                        : colorScheme.primaryFixedDim,
+                  ),
                 ),
               ),
-            ),
-            selected: isSelected,
-            selectedColor: colorScheme.tertiaryContainer,
-            backgroundColor: Colors.white,
-            shape: StadiumBorder(
-              side: BorderSide(
-                width: AppSizes.chipBorderWidth,
-                color: isSelected
-                    ? colorScheme.onTertiaryContainer
-                    : colorScheme.outline,
+              selected: isSelected,
+              selectedColor: colorScheme.tertiaryContainer,
+              backgroundColor: Colors.white,
+              shape: StadiumBorder(
+                side: BorderSide(
+                  width: AppSizes.chipBorderWidth,
+                  color: isSelected
+                      ? colorScheme.onTertiaryContainer
+                      : colorScheme.outline,
+                ),
               ),
+              onSelected: (value) {
+                setState(() => selectedIndex = index);
+                widget.onSelected?.call(label);
+              },
+              showCheckmark: false,
             ),
-            onSelected: (value) {
-              setState(() => selectedIndex = index);
-              widget.onSelected?.call(label);
-            },
-            showCheckmark: false,
           );
         }),
       ),

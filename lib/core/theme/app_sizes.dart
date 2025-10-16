@@ -18,6 +18,7 @@ class AppSizes {
   static const double normalRoundedCorner = 8;
   static const double borderWidth = 1;
   static const double toolbarHeight = 100;
+  static const double toolbarSmallHeight = 70;
   static const double categoryBarHeight = 40;
   static const double categoryBarPadding = 8;
   static const double subcategoryBarHeight = 100;
@@ -38,6 +39,8 @@ class AppSizes {
   static const double dividerThickness = 0.5;
   static const double chipBorderWidth = 2;
   static const double chipMinWidth = 30;
+  static const double pi = 3.14;
+  static const double arrowForward2Width = 8;
 
   static double get customSearchButtonHeight => 44.sp.clamp(44, 54);
 
