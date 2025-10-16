@@ -105,4 +105,27 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get highest_price => 'أعلى سعر';
+
+  @override
+  String get payment_method => 'طريقة الدفع';
+
+  @override
+  String get installments => 'تقسيط';
+
+  @override
+  String get cash => 'كاش';
+
+  @override
+  String get estate_state => 'حالة العقار';
+
+  @override
+  String get ready => 'جاهز';
+
+  @override
+  String get under_const => 'قيد الإنشاء';
+
+  @override
+  String watch_results(String numOfResults) {
+    return 'شاهد $numOfResults+ نتائج';
+  }
 }

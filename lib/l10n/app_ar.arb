@@ -39,5 +39,20 @@
   },
   "price" : "السعر",
   "lowest_price" : "أقل سعر",
-  "highest_price" : "أعلى سعر"
+  "highest_price" : "أعلى سعر",
+  "payment_method" : "طريقة الدفع",
+  "installments" : "تقسيط",
+  "cash" : "كاش",
+  "estate_state" : "حالة العقار",
+  "ready" : "جاهز",
+  "under_const" : "قيد الإنشاء",
+  "watch_results": "شاهد {numOfResults}+ نتائج",
+  "@watch_results": {
+    "placeholders": {
+      "numOfResults": {
+        "type": "String",
+        "example": "10,000"
+      }
+    }
+  }
 }

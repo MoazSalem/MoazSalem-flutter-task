@@ -105,4 +105,27 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get highest_price => 'Highest Price';
+
+  @override
+  String get payment_method => 'Payment Method';
+
+  @override
+  String get installments => 'Installments';
+
+  @override
+  String get cash => 'Cash';
+
+  @override
+  String get estate_state => 'Estate State';
+
+  @override
+  String get ready => 'Ready';
+
+  @override
+  String get under_const => 'Under Construction';
+
+  @override
+  String watch_results(String numOfResults) {
+    return 'Watch $numOfResults+ Result';
+  }
 }

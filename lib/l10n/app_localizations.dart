@@ -289,6 +289,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Highest Price'**
   String get highest_price;
+
+  /// No description provided for @payment_method.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Method'**
+  String get payment_method;
+
+  /// No description provided for @installments.
+  ///
+  /// In en, this message translates to:
+  /// **'Installments'**
+  String get installments;
+
+  /// No description provided for @cash.
+  ///
+  /// In en, this message translates to:
+  /// **'Cash'**
+  String get cash;
+
+  /// No description provided for @estate_state.
+  ///
+  /// In en, this message translates to:
+  /// **'Estate State'**
+  String get estate_state;
+
+  /// No description provided for @ready.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready'**
+  String get ready;
+
+  /// No description provided for @under_const.
+  ///
+  /// In en, this message translates to:
+  /// **'Under Construction'**
+  String get under_const;
+
+  /// No description provided for @watch_results.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch {numOfResults}+ Result'**
+  String watch_results(String numOfResults);
 }
 
 class _AppLocalizationsDelegate

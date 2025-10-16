@@ -39,6 +39,8 @@ class AppSizes {
   static const double chipBorderWidth = 2;
   static const double chipMinWidth = 30;
 
+  static double get customSearchButtonHeight => 44.sp.clamp(44, 54);
+
   static double get font10 => 10.sp.clamp(10, 12);
   static double get font12 => 12.sp.clamp(12, 14);
   static double get font14 => 14.sp.clamp(14, 16);

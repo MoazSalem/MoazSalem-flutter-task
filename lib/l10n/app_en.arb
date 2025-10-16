@@ -39,5 +39,20 @@
   },
   "price" : "Price",
   "lowest_price" : "Lowest Price",
-  "highest_price" : "Highest Price"
+  "highest_price" : "Highest Price",
+  "payment_method" : "Payment Method",
+  "installments" : "Installments",
+  "cash" : "Cash",
+  "estate_state" : "Estate State",
+  "ready" : "Ready",
+  "under_const" : "Under Construction",
+  "watch_results": "Watch {numOfResults}+ Result",
+    "@watch_results": {
+      "placeholders": {
+        "numOfResults": {
+          "type": "String",
+          "example": "10000"
+        }
+      }
+    }
 }
