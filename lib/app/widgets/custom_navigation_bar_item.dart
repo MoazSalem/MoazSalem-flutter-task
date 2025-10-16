@@ -7,28 +7,30 @@ class CustomNavigationBarItem extends StatelessWidget {
   final String icon;
   final String label;
   final bool isSelected;
-  final bool blue;
+  final bool isBlue;
+  final void Function()? onTap;
   const CustomNavigationBarItem({
     super.key,
     required this.icon,
     required this.label,
     required this.isSelected,
-    this.blue = false,
+    this.isBlue = false,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    final color = blue
-        ? Theme.of(context).colorScheme.tertiary
-        : isSelected
+    final color = isSelected
         ? Theme.of(context).colorScheme.primary
+        : isBlue
+        ? Theme.of(context).colorScheme.tertiary
         : Theme.of(context).colorScheme.primaryFixedDim;
     return ConstrainedBox(
       constraints: BoxConstraints(minWidth: AppSizes.navBarItemMinWidth),
       child: Material(
         borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
         child: InkWell(
-          onTap: () {},
+          onTap: onTap,
           borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
           child: Padding(
             padding: const EdgeInsets.all(8.0),

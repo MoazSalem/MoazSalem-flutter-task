@@ -4,17 +4,31 @@ import 'package:otex/core/theme/app_assets.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class CustomNavigationBar extends StatefulWidget {
-  const CustomNavigationBar({super.key});
+  final void Function(int) onItemTapped;
+  final int currentPage;
+  const CustomNavigationBar({
+    super.key,
+    required this.onItemTapped,
+    required this.currentPage,
+  });
 
   @override
   State<CustomNavigationBar> createState() => _CustomNavigationBarState();
 }
 
 class _CustomNavigationBarState extends State<CustomNavigationBar> {
-  final int _currentPage = 0;
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context)!;
+
+    // this is defined here to get the translated label
+    final navigationItems = <_NavigationItem>[
+      _NavigationItem(AppAssets.home, locale.home, false),
+      _NavigationItem(AppAssets.chat, locale.chat, false),
+      _NavigationItem(AppAssets.add, locale.add_ad, true),
+      _NavigationItem(AppAssets.myAds, locale.my_ads, false),
+      _NavigationItem(AppAssets.account, locale.account, false),
+    ];
 
     return Container(
       decoration: BoxDecoration(
@@ -27,35 +41,24 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          CustomNavigationBarItem(
-            icon: AppAssets.home,
-            label: locale.home,
-            isSelected: _currentPage == 0,
+        children: List.generate(
+          navigationItems.length,
+          (index) => CustomNavigationBarItem(
+            icon: navigationItems[index].icon,
+            label: navigationItems[index].label,
+            isBlue: navigationItems[index].isPrimaryAction,
+            isSelected: widget.currentPage == index,
+            onTap: () => widget.onItemTapped(index),
           ),
-          CustomNavigationBarItem(
-            icon: AppAssets.chat,
-            label: locale.chat,
-            isSelected: _currentPage == 1,
-          ),
-          CustomNavigationBarItem(
-            icon: AppAssets.add,
-            label: locale.add_ad,
-            isSelected: _currentPage == 2,
-            blue: true,
-          ),
-          CustomNavigationBarItem(
-            icon: AppAssets.myAds,
-            label: locale.my_ads,
-            isSelected: _currentPage == 3,
-          ),
-          CustomNavigationBarItem(
-            icon: AppAssets.account,
-            label: locale.account,
-            isSelected: _currentPage == 4,
-          ),
-        ],
+        ),
       ),
     );
   }
+}
+
+class _NavigationItem {
+  final String icon;
+  final String label;
+  final bool isPrimaryAction;
+  _NavigationItem(this.icon, this.label, this.isPrimaryAction);
 }
