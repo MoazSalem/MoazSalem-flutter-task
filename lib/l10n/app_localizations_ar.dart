@@ -40,4 +40,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get account => 'حسابى';
+
+  @override
+  String get filter => 'فلترة';
+
+  @override
+  String get bt_default => 'رجوع للأفتراضى';
 }

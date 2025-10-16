@@ -15,6 +15,9 @@ class AppAssets {
   static const String add = 'assets/images/svg/add.svg';
   static const String myAds = 'assets/images/svg/my_ads.svg';
   static const String account = 'assets/images/svg/account.svg';
+  static const String close = 'assets/images/svg/close.svg';
+  static const String location = 'assets/images/svg/location.svg';
+  static const String realEstate = 'assets/images/svg/real_estate.svg';
 
   static String getSubcategoryImage({required int index}) {
     return 'assets/images/png/subcategory_$index.png';

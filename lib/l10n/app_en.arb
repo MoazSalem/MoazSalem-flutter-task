@@ -9,5 +9,7 @@
   "chat" : "Chat",
   "add_ad" : "Add Ad",
   "my_ads" : "My Ads",
-  "account" : "Account"
+  "account" : "Account",
+  "filter" : "Filter",
+  "bt_default" : "Back to Default"
 }

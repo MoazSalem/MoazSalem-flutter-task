@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:otex/core/theme/app_assets.dart';
 import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/core/theme/app_typography.dart';
+import 'package:otex/features/filter/presentation/screens/filter_screen.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class HomeScreenAppBar extends StatelessWidget {
@@ -26,12 +27,15 @@ class HomeScreenAppBar extends StatelessWidget {
       actions: [
         InkWell(
           borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
-          onTap: () {},
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const FilterScreen()),
+          ),
           child: Row(
             children: [
               Text(
                 locale.all,
-                style: AppTypography.headlineLarge!.copyWith(
+                style: AppTypography.headlineMedium!.copyWith(
                   color: Theme.of(context).colorScheme.primaryFixedDim,
                 ),
               ),

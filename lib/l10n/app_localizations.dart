@@ -163,6 +163,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Account'**
   String get account;
+
+  /// No description provided for @filter.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter'**
+  String get filter;
+
+  /// No description provided for @bt_default.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Default'**
+  String get bt_default;
 }
 
 class _AppLocalizationsDelegate

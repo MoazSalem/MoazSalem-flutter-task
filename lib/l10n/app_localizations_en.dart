@@ -40,4 +40,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get account => 'Account';
+
+  @override
+  String get filter => 'Filter';
+
+  @override
+  String get bt_default => 'Back to Default';
 }

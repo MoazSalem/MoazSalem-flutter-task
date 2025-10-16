@@ -39,4 +39,5 @@ class AppSizes {
   static double get font14 => 14.sp.clamp(14, 16);
   static double get font16 => 16.sp.clamp(16, 18);
   static double get font18 => 18.sp.clamp(18, 20);
+  static double get font24 => 24.sp.clamp(24, 26);
 }
