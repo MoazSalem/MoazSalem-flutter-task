@@ -39,6 +39,11 @@ class AppSizes {
   static const double ribbonDefaultArrowDepth = 14;
   static const double ribbonHeight = 36;
   static const double ribbonWidth = 180;
+  static const double viewMultiplierWidgetHeight = 155;
+  static const double viewMultiplierContainerHeight = 100;
+  static const double viewMultiplierContainerWidth = 80;
+  static const double viewMultiplierContainerCorners = 36;
+  static const double viewMultiplierTextContainerHeight = 55;
 
   // Dynamic Values for UI Elements
   static double get customSearchButtonHeight => 44.sp.clamp(44, 54);

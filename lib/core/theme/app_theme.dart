@@ -19,6 +19,7 @@ class AppTheme {
       tertiary: Color(0xFF0062E2),
       tertiaryFixed: Color(0xFF3A813F),
       tertiaryFixedDim: Color(0xFF3B4CF2),
+      outlineVariant: Color(0x0D3A813F),
       tertiaryContainer: Color(0x0D0079FE),
       onTertiaryContainer: Color(0xFF0079FE),
       outline: Color(0x16000000),

@@ -4,11 +4,13 @@ import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/features/profile/presentation/widgets/plan_card_title.dart';
 import 'package:otex/features/profile/presentation/widgets/plan_perk.dart';
 import 'package:otex/features/profile/presentation/widgets/ribbon_widget.dart';
+import 'package:otex/features/profile/presentation/widgets/view_multiplier_widget.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class PlanCardWidget extends StatelessWidget {
   final String planName;
   final List<int> perks;
+  final int? viewsMultiplier;
   final bool isSelected;
   final bool isHighestViews;
   final bool isBestValue;
@@ -16,6 +18,7 @@ class PlanCardWidget extends StatelessWidget {
     super.key,
     required this.planName,
     required this.perks,
+    this.viewsMultiplier,
     required this.isSelected,
     this.isHighestViews = false,
     this.isBestValue = false,
@@ -35,8 +38,10 @@ class PlanCardWidget extends StatelessWidget {
       locale.perk_6,
     ];
     return Stack(
+      alignment: AlignmentDirectional.centerEnd,
       children: [
         Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             // Space to align with the ribbon
             SizedBox(height: AppSizes.p16),
@@ -94,17 +99,32 @@ class PlanCardWidget extends StatelessWidget {
           ],
         ),
         if (isBestValue || isHighestViews)
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppSizes.p4),
-            child: RibbonWidget(
-              text: isBestValue ? locale.best_value : locale.highest_views,
-              ribbonColor: colorScheme.secondaryContainer,
-              height: AppSizes.ribbonHeight,
-              width: isBestValue
-                  ? AppSizes.ribbonWidth
-                  : AppSizes.ribbonMinWidth,
-              // Locale name to rotate the ribbon based on the locale
-              localeName: locale.localeName,
+          Positioned.directional(
+            top: 0,
+            start: 0,
+            textDirection: Directionality.of(context),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: AppSizes.p4),
+              child: RibbonWidget(
+                text: isBestValue ? locale.best_value : locale.highest_views,
+                ribbonColor: colorScheme.secondaryContainer,
+                height: AppSizes.ribbonHeight,
+                width: isBestValue
+                    ? AppSizes.ribbonWidth
+                    : AppSizes.ribbonMinWidth,
+                // Locale name to rotate the ribbon based on the locale
+                localeName: locale.localeName,
+              ),
+            ),
+          ),
+        if (viewsMultiplier != null)
+          Positioned.directional(
+            end: AppSizes.p24,
+            textDirection: Directionality.of(context),
+            child: Padding(
+              // padding to cancel the space to align the ribbons
+              padding: EdgeInsets.only(top: AppSizes.p16),
+              child: ViewMultiplierWidget(viewsMultiplier: viewsMultiplier!),
             ),
           ),
       ],

@@ -27,7 +27,20 @@ class PlanPerk extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(description, style: AppTypography.labelLarge),
+              // set max allowed width for the description dynamically (screen width - all paddings -> (AppSizes.p16 * 7) - view multiplier container width)
+              SizedBox(
+                width:
+                    MediaQuery.sizeOf(context).width -
+                    AppSizes.p16 * 7 -
+                    AppSizes.viewMultiplierContainerWidth,
+                child: Expanded(
+                  child: Text(
+                    description,
+                    maxLines: 2,
+                    style: AppTypography.labelLarge,
+                  ),
+                ),
+              ),
               if (isIn48Hour)
                 Text(
                   "(${AppLocalizations.of(context)!.in_48_hours})",
