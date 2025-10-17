@@ -25,6 +25,7 @@ class AppTheme {
       outline: Color(0x16000000),
       surface: Color(0xffffffff),
       onSurface: Color(0xff090F1F),
+      surfaceContainer: Color(0xffF7F7F7),
     ),
 
     fontFamily: 'Tajawal',

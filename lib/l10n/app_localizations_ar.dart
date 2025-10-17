@@ -189,4 +189,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get sales_team => 'فريق المبيعات';
+
+  @override
+  String get next => 'التالى';
 }

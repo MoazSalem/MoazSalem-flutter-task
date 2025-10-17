@@ -28,13 +28,13 @@ class AppSizes {
   static const double iconLarge = 64;
   static const double navBarItemMinWidth = 80;
   static const double dividerThickness = 0.5;
-  static const double dividerLargeThickness = 1.5;
+  static const double dividerLargeThickness = 1.3;
   static const double chipBorderWidth = 2;
   static const double chipMinWidth = 30;
   static const double pi = 3.14;
   static const double arrowForward2Width = 8;
   static const double cardElevation = 4;
-  static const double underlineHeight = 2.75;
+  static const double underlineHeight = 2.5;
   static const double ribbonMinWidth = 130;
   static const double ribbonDefaultArrowDepth = 14;
   static const double ribbonHeight = 36;

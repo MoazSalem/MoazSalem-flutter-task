@@ -33,13 +33,7 @@ class PlanPerk extends StatelessWidget {
                     MediaQuery.sizeOf(context).width -
                     AppSizes.p16 * 7 -
                     AppSizes.viewMultiplierContainerWidth,
-                child: Expanded(
-                  child: Text(
-                    description,
-                    maxLines: 2,
-                    style: AppTypography.labelLarge,
-                  ),
-                ),
+                child: Text(description, style: AppTypography.labelLarge),
               ),
               if (isIn48Hour)
                 Text(

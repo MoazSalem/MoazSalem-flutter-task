@@ -14,36 +14,15 @@ class PlanCardTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final color = isSelected
-        ? colorScheme.tertiaryFixedDim
-        : colorScheme.primary;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(
           child: Row(
             children: [
-              Checkbox(
-                checkColor: colorScheme.surface,
-                fillColor: WidgetStateProperty.resolveWith((
-                  Set<WidgetState> states,
-                ) {
-                  if (states.contains(WidgetState.selected)) {
-                    return color;
-                  }
-                  return null;
-                }),
-                value: isSelected,
-                onChanged: (value) {},
-                visualDensity: VisualDensity.compact,
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: AppSizes.p4),
-                child: Text(
-                  planName,
-                  style: AppTypography.titleLarge.copyWith(color: color),
-                ),
+              _TitleWithCheckboxWidget(
+                planName: planName,
+                isSelectedDefault: isSelected,
               ),
             ],
           ),
@@ -51,6 +30,57 @@ class PlanCardTitle extends StatelessWidget {
         _UnderlinedText(
           amount: '3000',
           currency: AppLocalizations.of(context)!.egp,
+        ),
+      ],
+    );
+  }
+}
+
+class _TitleWithCheckboxWidget extends StatefulWidget {
+  final String planName;
+  final bool isSelectedDefault;
+  const _TitleWithCheckboxWidget({
+    this.isSelectedDefault = false,
+    required this.planName,
+  });
+
+  @override
+  State<_TitleWithCheckboxWidget> createState() =>
+      _TitleWithCheckboxWidgetState();
+}
+
+class _TitleWithCheckboxWidgetState extends State<_TitleWithCheckboxWidget> {
+  late bool isSelected = widget.isSelectedDefault;
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final color = isSelected
+        ? colorScheme.tertiaryFixedDim
+        : colorScheme.primary;
+    return Row(
+      children: [
+        Checkbox(
+          checkColor: colorScheme.surface,
+          fillColor: WidgetStateProperty.resolveWith((Set<WidgetState> states) {
+            if (states.contains(WidgetState.selected)) {
+              return color;
+            }
+            return null;
+          }),
+          value: isSelected,
+          onChanged: (value) {
+            setState(() {
+              isSelected = value!;
+            });
+          },
+          visualDensity: VisualDensity.compact,
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: AppSizes.p4),
+          child: Text(
+            widget.planName,
+            style: AppTypography.titleLarge.copyWith(color: color),
+          ),
         ),
       ],
     );

@@ -189,4 +189,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sales_team => 'Sales Team';
+
+  @override
+  String get next => 'Next';
 }

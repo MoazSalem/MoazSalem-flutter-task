@@ -27,6 +27,7 @@ class HomeScreenAppBar extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const FilterScreen()),
           ),
           child: Row(
+            spacing: AppSizes.p4,
             children: [
               Text(
                 locale.all,
@@ -35,9 +36,18 @@ class HomeScreenAppBar extends StatelessWidget {
                 ),
               ),
               // rotate arrow based on locale
-              Transform.rotate(
-                angle: locale.localeName == 'en' ? AppSizes.pi : 0,
-                child: SvgPicture.asset(AppAssets.arrowForward),
+              Padding(
+                padding: EdgeInsets.only(bottom: AppSizes.p4),
+                child: Transform.rotate(
+                  angle: locale.localeName == 'en' ? AppSizes.pi : 0,
+                  child: SvgPicture.asset(
+                    AppAssets.arrowForward,
+                    colorFilter: ColorFilter.mode(
+                      Theme.of(context).colorScheme.primaryFixedDim,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
