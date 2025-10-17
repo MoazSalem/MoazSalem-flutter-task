@@ -34,13 +34,13 @@ class AppSizes {
   static const double pi = 3.14;
   static const double arrowForward2Width = 8;
   static const double cardElevation = 4;
-  static const double underlineHeight = 2.5;
-  static const double underlineWidth = 85;
+  static const double underlineHeight = 2.75;
 
   // Dynamic Values for UI Elements
   static double get customSearchButtonHeight => 44.sp.clamp(44, 54);
 
   // Dynamic Padding values
+  static double get p2 => 2.sp.clamp(2, 3);
   static double get p4 => 4.sp.clamp(4, 6);
   static double get p8 => 8.sp.clamp(8, 10);
   static double get p12 => 12.sp.clamp(12, 14);

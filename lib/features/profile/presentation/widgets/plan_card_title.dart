@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/core/theme/app_typography.dart';
+import 'package:otex/l10n/app_localizations.dart';
 
 class PlanCardTitle extends StatelessWidget {
   final String planName;
@@ -20,57 +21,79 @@ class PlanCardTitle extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
-          children: [
-            Checkbox(
-              checkColor: colorScheme.surface,
-              fillColor: WidgetStateProperty.resolveWith((
-                Set<WidgetState> states,
-              ) {
-                if (states.contains(WidgetState.selected)) {
-                  return color;
-                }
-                return null;
-              }),
-              value: isSelected,
-              onChanged: (value) {},
-              visualDensity: VisualDensity.compact,
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: AppSizes.p4),
-              child: Text(
-                planName,
-                style: AppTypography.titleLarge.copyWith(color: color),
+        Expanded(
+          child: Row(
+            children: [
+              Checkbox(
+                checkColor: colorScheme.surface,
+                fillColor: WidgetStateProperty.resolveWith((
+                  Set<WidgetState> states,
+                ) {
+                  if (states.contains(WidgetState.selected)) {
+                    return color;
+                  }
+                  return null;
+                }),
+                value: isSelected,
+                onChanged: (value) {},
+                visualDensity: VisualDensity.compact,
               ),
-            ),
-          ],
+              Padding(
+                padding: EdgeInsets.only(top: AppSizes.p4),
+                child: Text(
+                  planName,
+                  style: AppTypography.titleLarge.copyWith(color: color),
+                ),
+              ),
+            ],
+          ),
         ),
-        _UnderlinedText(amount: '3000.0'),
+        _UnderlinedText(
+          amount: '3000',
+          currency: AppLocalizations.of(context)!.egp,
+        ),
       ],
     );
   }
 }
 
-// note this currently only takes in consideration that the currency is ج.م
 class _UnderlinedText extends StatelessWidget {
   final String amount;
-  const _UnderlinedText({required this.amount});
+  final String currency;
+  const _UnderlinedText({required this.amount, required this.currency});
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final currencyList = currency.split('');
+
     return Stack(
       alignment: Alignment.bottomCenter,
       children: [
-        Container(
-          width: AppSizes.underlineWidth,
-          height: AppSizes.underlineHeight,
-          decoration: BoxDecoration(
-            color: colorScheme.secondary,
-            borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
+        // underline
+        Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: AppSizes.p2,
+            horizontal: AppSizes.p4,
+          ),
+          child: Container(
+            width:
+                // calculate the width of the text and remove 2 pixels from the width to make it look like design
+                amount.length * AppSizes.p8 +
+                currencyList.length * AppSizes.p8 -
+                2,
+            height: AppSizes.underlineHeight,
+            decoration: BoxDecoration(
+              color: colorScheme.secondary,
+              borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
+            ),
           ),
         ),
+
+        // amount and currency
         RichText(
+          maxLines: 1,
+          overflow: TextOverflow.fade,
           text: TextSpan(
             style: AppTypography.titleLarge.copyWith(
               color: colorScheme.secondary,
@@ -78,25 +101,27 @@ class _UnderlinedText extends StatelessWidget {
             ),
             children: [
               TextSpan(text: amount),
-              TextSpan(
-                text: 'ج',
-                style: TextStyle(
-                  fontFamily: 'Tajawal',
-                  fontSize: AppTypography.titleLarge.fontSize,
-                  fontWeight: FontWeight.w700,
-                  color: colorScheme.secondary,
-                  backgroundColor: colorScheme.surface,
-                ),
-              ),
-              TextSpan(text: '.'),
-              TextSpan(
-                text: 'م',
-                style: TextStyle(
-                  fontSize: AppTypography.titleLarge.fontSize,
-                  fontWeight: FontWeight.w700,
-                  fontFamily: 'Tajawal',
-                  color: colorScheme.secondary,
-                  backgroundColor: colorScheme.surface,
+              // generate currency with different styles to look like design
+              ...List.generate(
+                currencyList.length,
+                (index) => TextSpan(
+                  text: currencyList[index],
+                  style: currencyList[index] == "."
+                      ? AppTypography.titleLarge.copyWith(
+                          color: colorScheme.secondary,
+                          fontFamily: 'Tajawal',
+                        )
+                      : TextStyle(
+                          fontFamily: 'Tajawal',
+                          fontSize: AppTypography.titleLarge.fontSize,
+                          fontWeight: FontWeight.w700,
+                          color: colorScheme.secondary,
+                          backgroundColor: colorScheme.surface,
+                          height:
+                              AppLocalizations.of(context)!.localeName == 'en'
+                              ? 0.4
+                              : 0.9,
+                        ),
                 ),
               ),
             ],
