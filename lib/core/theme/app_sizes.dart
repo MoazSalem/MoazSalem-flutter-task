@@ -26,7 +26,10 @@ class AppSizes {
   static const double iconSmall = 16;
   static const double iconNormal = 24;
   static const double iconLarge = 64;
+  static const double navBarHeight = 72;
   static const double navBarItemMinWidth = 80;
+  static const double navBarItemMaxHeight = 60;
+  static const double navBarIndicatorHeight = 2;
   static const double dividerThickness = 0.5;
   static const double dividerLargeThickness = 1.3;
   static const double chipBorderWidth = 2;

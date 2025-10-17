@@ -133,12 +133,40 @@ class _PriceRow extends StatelessWidget {
               ),
             ),
           ),
-          InkWell(
-            onTap: () {},
-            borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
-            child: SvgPicture.asset(AppAssets.favorite),
-          ),
+          FavoriteWidget(),
         ],
+      ),
+    );
+  }
+}
+
+class FavoriteWidget extends StatefulWidget {
+  const FavoriteWidget({super.key});
+
+  @override
+  State<FavoriteWidget> createState() => _FavoriteWidgetState();
+}
+
+class _FavoriteWidgetState extends State<FavoriteWidget> {
+  bool isFavorite = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return InkWell(
+      onTap: () {
+        setState(() {
+          isFavorite = !isFavorite;
+        });
+        // the actual call to add it to favorites should be here, for now it will lose state on scroll.
+      },
+      borderRadius: BorderRadius.circular(AppSizes.normalRoundedCorner),
+      child: SvgPicture.asset(
+        isFavorite ? AppAssets.favoriteFilled : AppAssets.favorite,
+        colorFilter: ColorFilter.mode(
+          isFavorite ? colorScheme.secondary : colorScheme.onSurface,
+          BlendMode.srcIn,
+        ),
       ),
     );
   }

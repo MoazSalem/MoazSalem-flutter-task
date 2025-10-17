@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otex/app/widgets/custom_navigation_bar_item.dart';
 import 'package:otex/core/theme/app_assets.dart';
+import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class CustomNavigationBar extends StatefulWidget {
@@ -31,6 +32,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
     ];
 
     return Container(
+      height: AppSizes.navBarHeight,
       decoration: BoxDecoration(
         border: Border(
           top: BorderSide(
@@ -39,16 +41,19 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           ),
         ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: List.generate(
-          navigationItems.length,
-          (index) => CustomNavigationBarItem(
-            icon: navigationItems[index].icon,
-            label: navigationItems[index].label,
-            isBlue: navigationItems[index].isPrimaryAction,
-            isSelected: widget.currentPage == index,
-            onTap: () => widget.onItemTapped(index),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: AppSizes.p12),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: List.generate(
+            navigationItems.length,
+            (index) => CustomNavigationBarItem(
+              icon: navigationItems[index].icon,
+              label: navigationItems[index].label,
+              isBlue: navigationItems[index].isPrimaryAction,
+              isSelected: widget.currentPage == index,
+              onTap: () => widget.onItemTapped(index),
+            ),
           ),
         ),
       ),

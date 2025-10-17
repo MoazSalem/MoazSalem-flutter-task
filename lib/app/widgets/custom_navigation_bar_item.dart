@@ -26,27 +26,45 @@ class CustomNavigationBarItem extends StatelessWidget {
         ? Theme.of(context).colorScheme.tertiary
         : Theme.of(context).colorScheme.primaryFixedDim;
     return ConstrainedBox(
-      constraints: BoxConstraints(minWidth: AppSizes.navBarItemMinWidth),
-      child: Material(
-        borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
-        child: InkWell(
-          onTap: onTap,
+      constraints: BoxConstraints(
+        minWidth: AppSizes.navBarItemMinWidth,
+        maxHeight: AppSizes.navBarItemMaxHeight,
+      ),
+      // simple animation when selecting items
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        decoration: BoxDecoration(
+          color: isSelected
+              ? Theme.of(context).colorScheme.primary
+              : Colors.transparent,
           borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SvgPicture.asset(
-                  icon,
-                  colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+        ),
+        child: Padding(
+          padding: EdgeInsets.only(bottom: AppSizes.navBarIndicatorHeight),
+          child: Material(
+            borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
+            child: InkWell(
+              onTap: onTap,
+              borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
+              child: Padding(
+                padding: EdgeInsets.all(AppSizes.p4),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(
+                      icon,
+                      colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+                    ),
+                    Text(
+                      label,
+                      style: AppTypography.bodyMedium.copyWith(
+                        color: color,
+                        height: 1.1,
+                      ),
+                    ),
+                  ],
                 ),
-                Text(
-                  label,
-                  style: AppTypography.bodyMedium.copyWith(color: color),
-                ),
-                // TODO: Add indicator
-              ],
+              ),
             ),
           ),
         ),
