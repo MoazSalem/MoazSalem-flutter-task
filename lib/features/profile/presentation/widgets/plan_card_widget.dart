@@ -3,6 +3,7 @@ import 'package:otex/core/theme/app_assets.dart';
 import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/features/profile/presentation/widgets/plan_card_title.dart';
 import 'package:otex/features/profile/presentation/widgets/plan_perk.dart';
+import 'package:otex/features/profile/presentation/widgets/ribbon_widget.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class PlanCardWidget extends StatelessWidget {
@@ -33,50 +34,80 @@ class PlanCardWidget extends StatelessWidget {
       locale.perk_5,
       locale.perk_6,
     ];
-    return Card(
-      color: colorScheme.surface,
-      elevation: AppSizes.cardElevation,
-      shadowColor: colorScheme.primaryFixedDim.withAlpha(60),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(AppSizes.normalRoundedCorner),
-        side: BorderSide(
-          color: colorScheme.outline,
-          width: AppSizes.borderWidth,
-        ),
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-              left: AppSizes.p12,
-              right: AppSizes.p12,
-              top: AppSizes.p8,
-            ),
-            child: PlanCardTitle(planName: planName, isSelected: isSelected),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppSizes.p16),
-            child: Divider(
-              thickness: AppSizes.dividerLargeThickness,
-              color: colorScheme.outline,
-            ),
-          ),
-          SizedBox(height: AppSizes.p4),
-          ...List.generate(
-            perks.length,
-            (index) => Padding(
-              padding: EdgeInsets.only(bottom: 16),
-              child: PlanPerk(
-                icon: AppAssets.getPerkIcon(index: index),
-                description: perksTitles[index],
+    return Stack(
+      children: [
+        Column(
+          children: [
+            // Space to align with the ribbon
+            SizedBox(height: AppSizes.p16),
+            Card(
+              color: colorScheme.surface,
+              elevation: AppSizes.cardElevation,
+              shadowColor: colorScheme.primaryFixedDim.withAlpha(60),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(
+                  AppSizes.normalRoundedCorner,
+                ),
+                side: BorderSide(
+                  color: colorScheme.outline,
+                  width: AppSizes.borderWidth,
+                ),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: AppSizes.p12,
+                      right: AppSizes.p12,
+                      top: AppSizes.p8,
+                    ),
+                    child: PlanCardTitle(
+                      planName: planName,
+                      isSelected: isSelected,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: AppSizes.p16),
+                    child: Divider(
+                      thickness: AppSizes.dividerLargeThickness,
+                      color: colorScheme.outline,
+                    ),
+                  ),
+                  SizedBox(height: AppSizes.p4),
+                  ...List.generate(
+                    perks.length,
+                    (index) => Padding(
+                      padding: EdgeInsets.only(bottom: 16),
+                      child: PlanPerk(
+                        icon: AppAssets.getPerkIcon(index: index),
+                        description: perksTitles[index],
+                        isIn48Hour: [2, 6].contains(perks[index]),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: AppSizes.p4),
+                ],
               ),
             ),
+          ],
+        ),
+        if (isBestValue || isHighestViews)
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: AppSizes.p4),
+            child: RibbonWidget(
+              text: isBestValue ? locale.best_value : locale.highest_views,
+              ribbonColor: colorScheme.secondaryContainer,
+              height: AppSizes.ribbonHeight,
+              width: isBestValue
+                  ? AppSizes.ribbonWidth
+                  : AppSizes.ribbonMinWidth,
+              // Locale name to rotate the ribbon based on the locale
+              localeName: locale.localeName,
+            ),
           ),
-          SizedBox(height: AppSizes.p4),
-        ],
-      ),
+      ],
     );
   }
 }

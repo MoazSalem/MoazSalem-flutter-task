@@ -15,6 +15,7 @@ class AppTheme {
       secondary: Color(0xFFF95B1C),
       secondaryFixed: Color(0xFFFF4144),
       secondaryFixedDim: Color(0x0DF95B1C),
+      secondaryContainer: Color(0xFFFFDBDB),
       tertiary: Color(0xFF0062E2),
       tertiaryFixed: Color(0xFF3A813F),
       tertiaryFixedDim: Color(0xFF3B4CF2),

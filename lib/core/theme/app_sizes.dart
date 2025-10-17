@@ -35,6 +35,10 @@ class AppSizes {
   static const double arrowForward2Width = 8;
   static const double cardElevation = 4;
   static const double underlineHeight = 2.75;
+  static const double ribbonMinWidth = 130;
+  static const double ribbonDefaultArrowDepth = 14;
+  static const double ribbonHeight = 36;
+  static const double ribbonWidth = 180;
 
   // Dynamic Values for UI Elements
   static double get customSearchButtonHeight => 44.sp.clamp(44, 54);

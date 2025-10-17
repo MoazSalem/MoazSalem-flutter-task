@@ -16,7 +16,6 @@ class PlansPage extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: AppSizes.p16),
           child: Column(
-            spacing: AppSizes.p16,
             children: [
               PlanCardWidget(
                 planName: locale.p_basic,
