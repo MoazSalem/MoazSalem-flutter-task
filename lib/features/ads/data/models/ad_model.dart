@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:otex/features/ads/domain/entities/ad.dart';
 
 part 'ad_model.freezed.dart';
 part 'ad_model.g.dart';
@@ -12,9 +13,21 @@ abstract class AdModel with _$AdModel {
     required double discountedPrice,
     required String imageUrl,
     required double soldCount,
-    required List<int> subcategoriesIds,
   }) = _AdModel;
 
   factory AdModel.fromJson(Map<String, dynamic> json) =>
       _$AdModelFromJson(json);
+}
+
+extension AdModelToAd on AdModel {
+  Ad toAd() {
+    return Ad(
+      id: id,
+      title: name,
+      originalPrice: originalPrice,
+      discountedPrice: discountedPrice,
+      imageUrl: imageUrl,
+      soldCount: soldCount,
+    );
+  }
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:otex/features/catalog/domain/entities/category.dart';
 
 part 'category_model.freezed.dart';
 part 'category_model.g.dart';
@@ -10,4 +11,10 @@ abstract class CategoryModel with _$CategoryModel {
 
   factory CategoryModel.fromJson(Map<String, dynamic> json) =>
       _$CategoryModelFromJson(json);
+}
+
+extension ToCategory on CategoryModel {
+  Category toCategory() {
+    return Category(id: id, name: name);
+  }
 }

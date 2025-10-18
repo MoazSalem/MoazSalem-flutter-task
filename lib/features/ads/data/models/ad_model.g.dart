@@ -13,9 +13,6 @@ _AdModel _$AdModelFromJson(Map<String, dynamic> json) => _AdModel(
   discountedPrice: (json['discountedPrice'] as num).toDouble(),
   imageUrl: json['imageUrl'] as String,
   soldCount: (json['soldCount'] as num).toDouble(),
-  subcategoriesIds: (json['subcategoriesIds'] as List<dynamic>)
-      .map((e) => (e as num).toInt())
-      .toList(),
 );
 
 Map<String, dynamic> _$AdModelToJson(_AdModel instance) => <String, dynamic>{
@@ -25,5 +22,4 @@ Map<String, dynamic> _$AdModelToJson(_AdModel instance) => <String, dynamic>{
   'discountedPrice': instance.discountedPrice,
   'imageUrl': instance.imageUrl,
   'soldCount': instance.soldCount,
-  'subcategoriesIds': instance.subcategoriesIds,
 };

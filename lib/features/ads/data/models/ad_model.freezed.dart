@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AdModel {
 
- int get id; String get name; double get originalPrice; double get discountedPrice; String get imageUrl; double get soldCount; List<int> get subcategoriesIds;
+ int get id; String get name; double get originalPrice; double get discountedPrice; String get imageUrl; double get soldCount;
 /// Create a copy of AdModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $AdModelCopyWith<AdModel> get copyWith => _$AdModelCopyWithImpl<AdModel>(this as
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.originalPrice, originalPrice) || other.originalPrice == originalPrice)&&(identical(other.discountedPrice, discountedPrice) || other.discountedPrice == discountedPrice)&&(identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl)&&(identical(other.soldCount, soldCount) || other.soldCount == soldCount)&&const DeepCollectionEquality().equals(other.subcategoriesIds, subcategoriesIds));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.originalPrice, originalPrice) || other.originalPrice == originalPrice)&&(identical(other.discountedPrice, discountedPrice) || other.discountedPrice == discountedPrice)&&(identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl)&&(identical(other.soldCount, soldCount) || other.soldCount == soldCount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,originalPrice,discountedPrice,imageUrl,soldCount,const DeepCollectionEquality().hash(subcategoriesIds));
+int get hashCode => Object.hash(runtimeType,id,name,originalPrice,discountedPrice,imageUrl,soldCount);
 
 @override
 String toString() {
-  return 'AdModel(id: $id, name: $name, originalPrice: $originalPrice, discountedPrice: $discountedPrice, imageUrl: $imageUrl, soldCount: $soldCount, subcategoriesIds: $subcategoriesIds)';
+  return 'AdModel(id: $id, name: $name, originalPrice: $originalPrice, discountedPrice: $discountedPrice, imageUrl: $imageUrl, soldCount: $soldCount)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $AdModelCopyWith<$Res>  {
   factory $AdModelCopyWith(AdModel value, $Res Function(AdModel) _then) = _$AdModelCopyWithImpl;
 @useResult
 $Res call({
- int id, String name, double originalPrice, double discountedPrice, String imageUrl, double soldCount, List<int> subcategoriesIds
+ int id, String name, double originalPrice, double discountedPrice, String imageUrl, double soldCount
 });
 
 
@@ -65,7 +65,7 @@ class _$AdModelCopyWithImpl<$Res>
 
 /// Create a copy of AdModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? originalPrice = null,Object? discountedPrice = null,Object? imageUrl = null,Object? soldCount = null,Object? subcategoriesIds = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? originalPrice = null,Object? discountedPrice = null,Object? imageUrl = null,Object? soldCount = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -73,8 +73,7 @@ as String,originalPrice: null == originalPrice ? _self.originalPrice : originalP
 as double,discountedPrice: null == discountedPrice ? _self.discountedPrice : discountedPrice // ignore: cast_nullable_to_non_nullable
 as double,imageUrl: null == imageUrl ? _self.imageUrl : imageUrl // ignore: cast_nullable_to_non_nullable
 as String,soldCount: null == soldCount ? _self.soldCount : soldCount // ignore: cast_nullable_to_non_nullable
-as double,subcategoriesIds: null == subcategoriesIds ? _self.subcategoriesIds : subcategoriesIds // ignore: cast_nullable_to_non_nullable
-as List<int>,
+as double,
   ));
 }
 
@@ -159,10 +158,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String name,  double originalPrice,  double discountedPrice,  String imageUrl,  double soldCount,  List<int> subcategoriesIds)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String name,  double originalPrice,  double discountedPrice,  String imageUrl,  double soldCount)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AdModel() when $default != null:
-return $default(_that.id,_that.name,_that.originalPrice,_that.discountedPrice,_that.imageUrl,_that.soldCount,_that.subcategoriesIds);case _:
+return $default(_that.id,_that.name,_that.originalPrice,_that.discountedPrice,_that.imageUrl,_that.soldCount);case _:
   return orElse();
 
 }
@@ -180,10 +179,10 @@ return $default(_that.id,_that.name,_that.originalPrice,_that.discountedPrice,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String name,  double originalPrice,  double discountedPrice,  String imageUrl,  double soldCount,  List<int> subcategoriesIds)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String name,  double originalPrice,  double discountedPrice,  String imageUrl,  double soldCount)  $default,) {final _that = this;
 switch (_that) {
 case _AdModel():
-return $default(_that.id,_that.name,_that.originalPrice,_that.discountedPrice,_that.imageUrl,_that.soldCount,_that.subcategoriesIds);case _:
+return $default(_that.id,_that.name,_that.originalPrice,_that.discountedPrice,_that.imageUrl,_that.soldCount);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -200,10 +199,10 @@ return $default(_that.id,_that.name,_that.originalPrice,_that.discountedPrice,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String name,  double originalPrice,  double discountedPrice,  String imageUrl,  double soldCount,  List<int> subcategoriesIds)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String name,  double originalPrice,  double discountedPrice,  String imageUrl,  double soldCount)?  $default,) {final _that = this;
 switch (_that) {
 case _AdModel() when $default != null:
-return $default(_that.id,_that.name,_that.originalPrice,_that.discountedPrice,_that.imageUrl,_that.soldCount,_that.subcategoriesIds);case _:
+return $default(_that.id,_that.name,_that.originalPrice,_that.discountedPrice,_that.imageUrl,_that.soldCount);case _:
   return null;
 
 }
@@ -215,7 +214,7 @@ return $default(_that.id,_that.name,_that.originalPrice,_that.discountedPrice,_t
 @JsonSerializable()
 
 class _AdModel implements AdModel {
-  const _AdModel({required this.id, required this.name, required this.originalPrice, required this.discountedPrice, required this.imageUrl, required this.soldCount, required final  List<int> subcategoriesIds}): _subcategoriesIds = subcategoriesIds;
+  const _AdModel({required this.id, required this.name, required this.originalPrice, required this.discountedPrice, required this.imageUrl, required this.soldCount});
   factory _AdModel.fromJson(Map<String, dynamic> json) => _$AdModelFromJson(json);
 
 @override final  int id;
@@ -224,13 +223,6 @@ class _AdModel implements AdModel {
 @override final  double discountedPrice;
 @override final  String imageUrl;
 @override final  double soldCount;
- final  List<int> _subcategoriesIds;
-@override List<int> get subcategoriesIds {
-  if (_subcategoriesIds is EqualUnmodifiableListView) return _subcategoriesIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_subcategoriesIds);
-}
-
 
 /// Create a copy of AdModel
 /// with the given fields replaced by the non-null parameter values.
@@ -245,16 +237,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.originalPrice, originalPrice) || other.originalPrice == originalPrice)&&(identical(other.discountedPrice, discountedPrice) || other.discountedPrice == discountedPrice)&&(identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl)&&(identical(other.soldCount, soldCount) || other.soldCount == soldCount)&&const DeepCollectionEquality().equals(other._subcategoriesIds, _subcategoriesIds));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.originalPrice, originalPrice) || other.originalPrice == originalPrice)&&(identical(other.discountedPrice, discountedPrice) || other.discountedPrice == discountedPrice)&&(identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl)&&(identical(other.soldCount, soldCount) || other.soldCount == soldCount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,originalPrice,discountedPrice,imageUrl,soldCount,const DeepCollectionEquality().hash(_subcategoriesIds));
+int get hashCode => Object.hash(runtimeType,id,name,originalPrice,discountedPrice,imageUrl,soldCount);
 
 @override
 String toString() {
-  return 'AdModel(id: $id, name: $name, originalPrice: $originalPrice, discountedPrice: $discountedPrice, imageUrl: $imageUrl, soldCount: $soldCount, subcategoriesIds: $subcategoriesIds)';
+  return 'AdModel(id: $id, name: $name, originalPrice: $originalPrice, discountedPrice: $discountedPrice, imageUrl: $imageUrl, soldCount: $soldCount)';
 }
 
 
@@ -265,7 +257,7 @@ abstract mixin class _$AdModelCopyWith<$Res> implements $AdModelCopyWith<$Res> {
   factory _$AdModelCopyWith(_AdModel value, $Res Function(_AdModel) _then) = __$AdModelCopyWithImpl;
 @override @useResult
 $Res call({
- int id, String name, double originalPrice, double discountedPrice, String imageUrl, double soldCount, List<int> subcategoriesIds
+ int id, String name, double originalPrice, double discountedPrice, String imageUrl, double soldCount
 });
 
 
@@ -282,7 +274,7 @@ class __$AdModelCopyWithImpl<$Res>
 
 /// Create a copy of AdModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? originalPrice = null,Object? discountedPrice = null,Object? imageUrl = null,Object? soldCount = null,Object? subcategoriesIds = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? originalPrice = null,Object? discountedPrice = null,Object? imageUrl = null,Object? soldCount = null,}) {
   return _then(_AdModel(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -290,8 +282,7 @@ as String,originalPrice: null == originalPrice ? _self.originalPrice : originalP
 as double,discountedPrice: null == discountedPrice ? _self.discountedPrice : discountedPrice // ignore: cast_nullable_to_non_nullable
 as double,imageUrl: null == imageUrl ? _self.imageUrl : imageUrl // ignore: cast_nullable_to_non_nullable
 as String,soldCount: null == soldCount ? _self.soldCount : soldCount // ignore: cast_nullable_to_non_nullable
-as double,subcategoriesIds: null == subcategoriesIds ? _self._subcategoriesIds : subcategoriesIds // ignore: cast_nullable_to_non_nullable
-as List<int>,
+as double,
   ));
 }
 
