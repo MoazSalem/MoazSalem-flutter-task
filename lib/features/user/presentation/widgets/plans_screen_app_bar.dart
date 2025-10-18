@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/core/theme/app_typography.dart';
 import 'package:otex/core/utils/app_assets.dart';
@@ -61,7 +62,7 @@ class _BackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () => Navigator.pop(context),
+      onPressed: () => context.pop(),
       icon: Transform.rotate(
         angle: AppLocalizations.of(context)!.localeName == 'en'
             ? 0

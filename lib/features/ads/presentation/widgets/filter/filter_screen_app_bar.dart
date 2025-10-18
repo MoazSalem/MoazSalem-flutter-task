@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/core/theme/app_typography.dart';
 import 'package:otex/core/utils/app_assets.dart';
@@ -28,7 +29,7 @@ class FilterScreenAppBar extends StatelessWidget
         padding: EdgeInsets.only(bottom: AppSizes.p8),
         child: IconButton(
           icon: SvgPicture.asset(AppAssets.close, width: 12),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => context.pop(),
         ),
       ),
       actionsPadding: EdgeInsets.symmetric(horizontal: AppSizes.p8),

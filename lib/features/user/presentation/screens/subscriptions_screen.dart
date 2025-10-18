@@ -6,8 +6,8 @@ import 'package:otex/features/user/presentation/widgets/plan_card_widget.dart';
 import 'package:otex/features/user/presentation/widgets/plans_screen_app_bar.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
-class PlansPage extends StatelessWidget {
-  const PlansPage({super.key});
+class SubscriptionsScreen extends StatelessWidget {
+  const SubscriptionsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

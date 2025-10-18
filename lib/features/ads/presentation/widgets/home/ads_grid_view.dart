@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 import 'package:otex/core/theme/app_sizes.dart';
-import 'package:otex/features/ads/domain/usecases/get_ads_by_subcategory_id_usecase.dart';
-import 'package:otex/features/ads/domain/usecases/get_all_ads_usecase.dart';
 import 'package:otex/features/ads/presentation/cubit/ads_cubit.dart';
 import 'package:otex/features/ads/presentation/widgets/home/ad_widget.dart';
 import 'package:otex/l10n/app_localizations.dart';
@@ -20,63 +17,54 @@ class AdsGridView extends StatelessWidget {
         horizontal: AppSizes.p16,
         vertical: AppSizes.p12,
       ),
-      sliver: BlocProvider(
-        create: (context) => AdsCubit(
-          GetIt.instance<GetAllAdsUseCase>(),
-          GetIt.instance<GetAdsBySubcategoryIdUseCase>(),
-        )..getAllAds(),
-        child: BlocBuilder<AdsCubit, AdsState>(
-          builder: (context, state) {
-            return switch (state) {
-              // Initial and Loading states
-              AdsInitial() || AdsLoading() => const SliverToBoxAdapter(
-                child: Center(child: CircularProgressIndicator()),
-              ),
-              // Loaded state
-              AdsLoaded(ads: final ads) =>
-                ads.isEmpty
-                    // if ads is empty show no results found
-                    ? SliverFillRemaining(
-                        hasScrollBody: false,
-                        child: Center(
-                          child: Text(
-                            locale.no_results_found,
-                            style: textTheme,
-                          ),
-                        ),
-                      )
-                    // if ads is not empty show ads grid
-                    : SliverGrid(
-                        delegate: SliverChildBuilderDelegate(
-                          childCount: ads.length,
-                          (context, index) {
-                            return AdWidget(ad: ads[index]);
-                          },
-                        ),
-                        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                          childAspectRatio: AppSizes.adWidgetAspectRatio,
-                          maxCrossAxisExtent: AppSizes.adWidgetWidth,
-                          mainAxisSpacing: AppSizes.p12,
-                          crossAxisSpacing: AppSizes.p12,
-                        ),
+      sliver: BlocBuilder<AdsCubit, AdsState>(
+        builder: (context, state) {
+          return switch (state) {
+            // Initial and Loading states
+            AdsInitial() || AdsLoading() => const SliverToBoxAdapter(
+              child: Center(child: CircularProgressIndicator()),
+            ),
+            // Loaded state
+            AdsLoaded(ads: final ads) =>
+              ads.isEmpty
+                  // if ads is empty show no results found
+                  ? SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Center(
+                        child: Text(locale.no_results_found, style: textTheme),
                       ),
+                    )
+                  // if ads is not empty show ads grid
+                  : SliverGrid(
+                      delegate: SliverChildBuilderDelegate(
+                        childCount: ads.length,
+                        (context, index) {
+                          return AdWidget(ad: ads[index]);
+                        },
+                      ),
+                      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                        childAspectRatio: AppSizes.adWidgetAspectRatio,
+                        maxCrossAxisExtent: AppSizes.adWidgetWidth,
+                        mainAxisSpacing: AppSizes.p12,
+                        crossAxisSpacing: AppSizes.p12,
+                      ),
+                    ),
 
-              // Error state
-              AdsError(message: final message) => SliverFillRemaining(
-                hasScrollBody: false,
-                child: Center(child: Text(message, style: textTheme)),
-              ),
+            // Error state
+            AdsError(message: final message) => SliverFillRemaining(
+              hasScrollBody: false,
+              child: Center(child: Text(message, style: textTheme)),
+            ),
 
-              // Else
-              _ => SliverFillRemaining(
-                hasScrollBody: false,
-                child: Center(
-                  child: Text(locale.unexpected_error, style: textTheme),
-                ),
+            // Else
+            _ => SliverFillRemaining(
+              hasScrollBody: false,
+              child: Center(
+                child: Text(locale.unexpected_error, style: textTheme),
               ),
-            };
-          },
-        ),
+            ),
+          };
+        },
       ),
     );
   }

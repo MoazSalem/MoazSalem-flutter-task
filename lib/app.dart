@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:otex/core/navigation/app_router.dart';
 import 'package:otex/core/theme/app_theme.dart';
-import 'package:otex/features/main/presentation/screens/main_screen.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class App extends StatelessWidget {
@@ -8,14 +8,14 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       locale: const Locale('ar'),
       title: 'Otex',
       theme: AppTheme.lightTheme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: const [Locale('en'), Locale('ar')],
-      home: MainScreen(),
+      routerConfig: AppRouter().router,
     );
   }
 }

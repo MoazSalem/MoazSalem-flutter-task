@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/core/theme/app_typography.dart';
 import 'package:otex/core/utils/app_assets.dart';
-import 'package:otex/features/ads/presentation/screens/filter_screen.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class HomeScreenAppBar extends StatelessWidget {
@@ -22,10 +22,7 @@ class HomeScreenAppBar extends StatelessWidget {
       actions: [
         InkWell(
           borderRadius: BorderRadius.circular(AppSizes.smallRoundedCorner),
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const FilterScreen()),
-          ),
+          onTap: () => context.go('/filter'),
           child: Row(
             spacing: AppSizes.p4,
             children: [

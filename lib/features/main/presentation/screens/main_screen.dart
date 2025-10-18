@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:otex/features/ads/presentation/screens/home_screen.dart';
 import 'package:otex/features/main/presentation/widgets/custom_navigation_bar.dart';
-import 'package:otex/features/user/presentation/screens/plans_page.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -12,14 +12,6 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int _currentPageIndex = 0;
-  static const List<Widget> _pages = <Widget>[
-    HomeScreen(),
-    Placeholder(color: Colors.green),
-    Placeholder(color: Colors.blue),
-    Placeholder(color: Colors.red),
-    Placeholder(color: Colors.orange),
-  ];
-
   void _onItemTapped(int index) {
     setState(() {
       _currentPageIndex = index;
@@ -27,9 +19,7 @@ class _MainScreenState extends State<MainScreen> {
     // push the plans page to the user when he first opens the profile screen
     // this should be handled different if there was an actual user
     if (index == 4) {
-      Navigator.of(
-        context,
-      ).push(MaterialPageRoute(builder: (context) => const PlansPage()));
+      context.push('/subscriptions');
     }
   }
 
@@ -49,3 +39,11 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
+
+const List<Widget> _pages = <Widget>[
+  HomeScreen(),
+  Placeholder(color: Colors.green),
+  Placeholder(color: Colors.blue),
+  Placeholder(color: Colors.red),
+  Placeholder(color: Colors.orange),
+];
