@@ -26,12 +26,8 @@ class AppAssets {
   static const String perkGlobe = 'assets/images/svg/perk_globe.svg';
   static const String perkSpecial = 'assets/images/svg/perk_special.svg';
 
-  static String getImageByName({required String url}) {
+  static String getImageByUrl({required String url}) {
     return 'assets/images/$url';
-  }
-
-  static String getAdImage({required int index}) {
-    return 'assets/images/png/ad_$index.png';
   }
 
   static String getPerkIcon({required int index}) {

@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+import 'package:otex/core/db/database_seeder.dart';
 import 'package:sqflite/sqflite.dart';
 
 class AppDatabase {
@@ -17,10 +19,18 @@ class AppDatabase {
   Future<Database> _initDB(String databaseName) async {
     final dbPath = await getDatabasesPath();
     final path = "$dbPath/$databaseName";
-    return await openDatabase(path, version: 1, onCreate: _createDB);
+    return await openDatabase(
+      path,
+      version: 1,
+      onCreate: (db, version) async {
+        await _createDB(db, version);
+        // seed right after creation
+        await DatabaseSeeder.seedDatabase(db);
+      },
+    );
   }
 
-  // create database tables (5 tables) and then insert initial data
+  // create database tables (5 tables)
   Future<void> _createDB(Database db, int version) async {
     // categories
     await db.execute('''
@@ -77,6 +87,8 @@ class AppDatabase {
     );
     ''');
 
-    // TODO: insert initial data
+    if (kDebugMode) {
+      print('Database created successfully');
+    }
   }
 }

@@ -22,7 +22,7 @@ class AdWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          _ImageContainer(image: AppAssets.getAdImage(index: 1)),
+          _ImageContainer(image: AppAssets.getImageByUrl(url: "png/shirt.png")),
           SizedBox(height: AppSizes.p8),
           const _TitleRow(title: "جاكيت من الصوف مناسب", isDiscounted: true),
           SizedBox(height: AppSizes.p8),
