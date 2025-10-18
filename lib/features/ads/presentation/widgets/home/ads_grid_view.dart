@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+import 'package:otex/core/theme/app_sizes.dart';
+import 'package:otex/features/ads/presentation/widgets/home/ad_widget.dart';
+
+class AdsGridView extends StatelessWidget {
+  const AdsGridView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverPadding(
+      padding: EdgeInsets.symmetric(
+        horizontal: AppSizes.p16,
+        vertical: AppSizes.p12,
+      ),
+      sliver: SliverGrid(
+        delegate: SliverChildBuilderDelegate(
+          childCount: 8,
+          (context, index) => AdWidget(),
+        ),
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          childAspectRatio: AppSizes.adWidgetAspectRatio,
+          maxCrossAxisExtent: AppSizes.adWidgetWidth,
+          mainAxisSpacing: AppSizes.p12,
+          crossAxisSpacing: AppSizes.p12,
+        ),
+      ),
+    );
+  }
+}
