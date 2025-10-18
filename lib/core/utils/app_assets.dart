@@ -26,8 +26,8 @@ class AppAssets {
   static const String perkGlobe = 'assets/images/svg/perk_globe.svg';
   static const String perkSpecial = 'assets/images/svg/perk_special.svg';
 
-  static String getSubcategoryImage({required int index}) {
-    return 'assets/images/png/subcategory_$index.png';
+  static String getImageByName({required String url}) {
+    return 'assets/images/$url';
   }
 
   static String getAdImage({required int index}) {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:otex/core/theme/app_sizes.dart';
-import 'package:otex/core/utils/app_assets.dart';
 import 'package:otex/features/ads/presentation/widgets/home/horizontal_scroll_bar.dart';
 import 'package:otex/features/ads/presentation/widgets/home/subcategory_widget.dart';
 
@@ -30,7 +29,7 @@ class SubcategoriesListBar extends StatelessWidget {
           itemCount: _tempSubcategories.length,
           itemBuilder: (context, index) => SubcategoryWidget(
             title: _tempSubcategories[index],
-            image: AppAssets.getSubcategoryImage(index: index),
+            image: '', // AppAssets.getSubcategoryImage(index: index),
           ),
         ),
       ),

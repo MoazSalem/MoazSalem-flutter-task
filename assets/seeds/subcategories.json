@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "men_fashion", "categoryId": 1, "imageUrl": "png/men_fashion.png" },
+  { "id": 2, "name": "watches", "categoryId": 3, "imageUrl": "png/watches.png" },
+  { "id": 3, "name": "smartphones", "categoryId": 3, "imageUrl": "png/smartphones.png" },
+  { "id": 4, "name": "makeup", "categoryId": 4, "imageUrl": "png/makeup.png" },
+  { "id": 5, "name": "villas", "categoryId": 5, "imageUrl": "png/villas.png" }
+]

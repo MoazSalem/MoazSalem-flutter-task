@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "jacket",
+    "originalPrice" : 60000000,
+    "discountedPrice" : 32000000,
+    "imageUrl": "png/hoodie.png",
+    "soldCount": 3300
+  },
+  {
+    "id": 2,
+    "name": "jacket",
+    "originalPrice" : 60000000,
+    "discountedPrice" : 32000000,
+    "imageUrl": "png/shirt.png",
+    "soldCount": 3300
+  },
+  {
+    "id": 3,
+    "name": "jacket",
+    "originalPrice" : 60000000,
+    "discountedPrice" : 32000000,
+    "imageUrl": "png/sneakers.png",
+    "soldCount": 3300
+  },
+  {
+    "id": 4,
+    "name": "jacket",
+    "originalPrice" : 60000000,
+    "discountedPrice" : 32000000,
+    "imageUrl": "png/hoodie.png",
+    "soldCount": 3300
+  },
+  {
+    "id": 5,
+    "name": "jacket",
+    "originalPrice" : 60000000,
+    "discountedPrice" : 32000000,
+    "imageUrl": "png/sneakers.png",
+    "soldCount": 3300
+  },
+  {
+    "id": 6,
+    "name": "jacket",
+    "originalPrice" : 60000000,
+    "discountedPrice" : 32000000,
+    "imageUrl": "png/hoodie.png",
+    "soldCount": 3300
+  },
+  {
+  "id": 7,
+  "name": "jacket",
+  "originalPrice" : 60000000,
+  "discountedPrice" : 32000000,
+  "imageUrl": "png/hoodie.png",
+  "soldCount": 3300
+  },
+  {
+  "id": 8,
+  "name": "jacket",
+  "originalPrice" : 60000000,
+  "discountedPrice" : 32000000,
+  "imageUrl": "png/shirt.png",
+  "soldCount": 3300
+  }
+]

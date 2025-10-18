@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "clothing" },
+  { "id": 2, "name": "accessories" },
+  { "id": 3, "name": "electronics" },
+  { "id": 4, "name": "fashion" },
+  { "id": 5, "name": "real_estate" }
+]
