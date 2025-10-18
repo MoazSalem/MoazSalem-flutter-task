@@ -51,7 +51,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get category => 'Category';
 
   @override
-  String get real_estate => 'Real Estate';
+  String get real_estates => 'Real Estate';
 
   @override
   String get villa_s => 'Villas for Sale';
@@ -201,4 +201,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get unexpected_error => 'An unexpected error occurred';
+
+  @override
+  String get all_deals => 'All Deals';
+
+  @override
+  String get clothing => 'Clothing';
+
+  @override
+  String get accessories => 'Accessories';
+
+  @override
+  String get electronics => 'Electronics';
+
+  @override
+  String get fashion => 'Fashion';
+
+  @override
+  String get real_estate => 'Real Estate';
+
+  @override
+  String get men_fashion => 'Men Fashion';
+
+  @override
+  String get watches => 'Watches';
+
+  @override
+  String get smartphones => 'Smartphones';
+
+  @override
+  String get makeup => 'Makeup';
+
+  @override
+  String get villas => 'Villas';
+
+  @override
+  String get no_subcategories => 'No Subcategories for This Category';
 }

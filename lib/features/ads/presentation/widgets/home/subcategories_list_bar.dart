@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otex/core/theme/app_sizes.dart';
-import 'package:otex/core/utils/app_assets.dart';
+import 'package:otex/features/ads/presentation/cubit/ads_cubit.dart';
 import 'package:otex/features/ads/presentation/widgets/home/horizontal_scroll_bar.dart';
 import 'package:otex/features/ads/presentation/widgets/home/subcategory_widget.dart';
+import 'package:otex/features/catalog/presentation/cubit/catalog_cubit.dart';
+import 'package:otex/l10n/app_localizations.dart';
 
-const _tempSubcategories = [
-  "موضة رجالى",
-  "ساعات",
-  "موبايلات",
-  "منتجات تجميل",
-  "عقارات",
-];
-
-class SubcategoriesListBar extends StatelessWidget {
+class SubcategoriesListBar extends StatefulWidget {
   const SubcategoriesListBar({super.key});
 
+  @override
+  State<SubcategoriesListBar> createState() => _SubcategoriesListBarState();
+}
+
+class _SubcategoriesListBarState extends State<SubcategoriesListBar> {
+  int _selectedIndex = -1;
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
@@ -25,13 +26,38 @@ class SubcategoriesListBar extends StatelessWidget {
       ),
       sliver: HorizontalScrollBar(
         height: AppSizes.subcategoryBarHeight,
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: _tempSubcategories.length,
-          itemBuilder: (context, index) => SubcategoryWidget(
-            title: _tempSubcategories[index],
-            image: AppAssets.getImageByUrl(url: 'png/men_fashion.png'),
-          ),
+        child: BlocBuilder<CatalogCubit, CatalogState>(
+          builder: (context, state) {
+            if (state.error != null) {
+              return Center(child: Text(state.error!));
+            }
+            if (state.isSubcategoriesLoading) {
+              return const Center(child: CircularProgressIndicator());
+            }
+            // Loaded state
+            if (state.subcategories.isNotEmpty) {
+              return ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: state.subcategories.length,
+                itemBuilder: (context, index) => SubcategoryWidget(
+                  subcategory: state.subcategories[index],
+                  isSelected: index == _selectedIndex,
+                  onTap: () {
+                    setState(() {
+                      _selectedIndex = index;
+                    });
+                    BlocProvider.of<AdsCubit>(
+                      context,
+                    ).getAdsBySubcategoryId(state.subcategories[index].id);
+                  },
+                ),
+              );
+            } else {
+              return Center(
+                child: Text(AppLocalizations.of(context)!.no_subcategories),
+              );
+            }
+          },
         ),
       ),
     );

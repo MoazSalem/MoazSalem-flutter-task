@@ -13,7 +13,7 @@
   "filter" : "Filter",
   "bt_default" : "Back to Default",
   "category" : "Category",
-  "real_estate" : "Real Estate",
+  "real_estates" : "Real Estate",
   "villa_s" : "Villas for Sale",
   "change" : "Change",
   "location" : "Location",
@@ -78,6 +78,17 @@
     "next": "Next",
     "jacket": "Jacket from Sheepskin Suitable",
     "no_results_found": "No Results Found",
-    "unexpected_error": "An unexpected error occurred"
-
+    "unexpected_error": "An unexpected error occurred",
+    "all_deals": "All Deals",
+    "clothing": "Clothing",
+    "accessories": "Accessories",
+    "electronics": "Electronics",
+    "fashion": "Fashion",
+    "real_estate": "Real Estate",
+    "men_fashion": "Men Fashion",
+    "watches" : "Watches",
+    "smartphones": "Smartphones",
+    "makeup": "Makeup",
+    "villas": "Villas",
+    "no_subcategories": "No Subcategories for This Category"
 }

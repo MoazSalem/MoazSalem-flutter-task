@@ -182,11 +182,11 @@ abstract class AppLocalizations {
   /// **'Category'**
   String get category;
 
-  /// No description provided for @real_estate.
+  /// No description provided for @real_estates.
   ///
   /// In en, this message translates to:
   /// **'Real Estate'**
-  String get real_estate;
+  String get real_estates;
 
   /// No description provided for @villa_s.
   ///
@@ -475,6 +475,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'An unexpected error occurred'**
   String get unexpected_error;
+
+  /// No description provided for @all_deals.
+  ///
+  /// In en, this message translates to:
+  /// **'All Deals'**
+  String get all_deals;
+
+  /// No description provided for @clothing.
+  ///
+  /// In en, this message translates to:
+  /// **'Clothing'**
+  String get clothing;
+
+  /// No description provided for @accessories.
+  ///
+  /// In en, this message translates to:
+  /// **'Accessories'**
+  String get accessories;
+
+  /// No description provided for @electronics.
+  ///
+  /// In en, this message translates to:
+  /// **'Electronics'**
+  String get electronics;
+
+  /// No description provided for @fashion.
+  ///
+  /// In en, this message translates to:
+  /// **'Fashion'**
+  String get fashion;
+
+  /// No description provided for @real_estate.
+  ///
+  /// In en, this message translates to:
+  /// **'Real Estate'**
+  String get real_estate;
+
+  /// No description provided for @men_fashion.
+  ///
+  /// In en, this message translates to:
+  /// **'Men Fashion'**
+  String get men_fashion;
+
+  /// No description provided for @watches.
+  ///
+  /// In en, this message translates to:
+  /// **'Watches'**
+  String get watches;
+
+  /// No description provided for @smartphones.
+  ///
+  /// In en, this message translates to:
+  /// **'Smartphones'**
+  String get smartphones;
+
+  /// No description provided for @makeup.
+  ///
+  /// In en, this message translates to:
+  /// **'Makeup'**
+  String get makeup;
+
+  /// No description provided for @villas.
+  ///
+  /// In en, this message translates to:
+  /// **'Villas'**
+  String get villas;
+
+  /// No description provided for @no_subcategories.
+  ///
+  /// In en, this message translates to:
+  /// **'No Subcategories for This Category'**
+  String get no_subcategories;
 }
 
 class _AppLocalizationsDelegate

@@ -20,7 +20,7 @@ class CategorySection extends StatelessWidget {
           onTap: () {},
           contentPadding: EdgeInsets.symmetric(horizontal: AppSizes.p20),
           leading: SvgPicture.asset(AppAssets.realEstate),
-          title: Text(locale.real_estate, style: AppTypography.labelLarge),
+          title: Text(locale.real_estates, style: AppTypography.labelLarge),
           subtitle: Text(
             locale.villa_s,
             style: AppTypography.labelMedium.copyWith(

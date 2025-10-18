@@ -51,7 +51,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get category => 'الفئة';
 
   @override
-  String get real_estate => 'عقارات';
+  String get real_estates => 'عقارات';
 
   @override
   String get villa_s => 'فلل للبيع';
@@ -201,4 +201,40 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get unexpected_error => 'حدث خطأ غير متوقع';
+
+  @override
+  String get all_deals => 'كل العروض';
+
+  @override
+  String get clothing => 'ملابس';
+
+  @override
+  String get accessories => 'أكسسوارات';
+
+  @override
+  String get electronics => 'الكترونيات';
+
+  @override
+  String get fashion => 'موضة';
+
+  @override
+  String get real_estate => 'العقارات';
+
+  @override
+  String get men_fashion => 'موضة رجالى';
+
+  @override
+  String get watches => 'ساعات';
+
+  @override
+  String get smartphones => 'موبايلات';
+
+  @override
+  String get makeup => 'منتجات تجميل';
+
+  @override
+  String get villas => 'عقارات';
+
+  @override
+  String get no_subcategories => 'لا يوجد فئة فرعية لهذه النوع ';
 }

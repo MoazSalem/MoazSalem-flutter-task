@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:otex/core/theme/app_sizes.dart';
+import 'package:otex/features/ads/domain/usecases/get_ads_by_subcategory_id_usecase.dart';
+import 'package:otex/features/ads/domain/usecases/get_all_ads_usecase.dart';
 import 'package:otex/features/ads/presentation/cubit/ads_cubit.dart';
 import 'package:otex/features/ads/presentation/widgets/home/ad_widget.dart';
 import 'package:otex/l10n/app_localizations.dart';
@@ -18,7 +21,10 @@ class AdsGridView extends StatelessWidget {
         vertical: AppSizes.p12,
       ),
       sliver: BlocProvider(
-        create: (context) => AdsCubit()..getAllAds(),
+        create: (context) => AdsCubit(
+          GetIt.instance<GetAllAdsUseCase>(),
+          GetIt.instance<GetAdsBySubcategoryIdUseCase>(),
+        )..getAllAds(),
         child: BlocBuilder<AdsCubit, AdsState>(
           builder: (context, state) {
             return switch (state) {

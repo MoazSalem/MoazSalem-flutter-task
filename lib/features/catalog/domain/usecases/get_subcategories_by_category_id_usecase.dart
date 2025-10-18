@@ -5,10 +5,10 @@ import 'package:otex/features/catalog/domain/entities/subcategory.dart';
 import 'package:otex/features/catalog/domain/repositories/catalog_repository.dart';
 
 @Injectable()
-class GetSubcategoriesByCategoryIdUsecase {
+class GetSubcategoriesByCategoryIdUseCase {
   final CatalogRepository catalogRepository;
 
-  GetSubcategoriesByCategoryIdUsecase(this.catalogRepository);
+  GetSubcategoriesByCategoryIdUseCase(this.catalogRepository);
 
   Future<Either<ErrorException, List<Subcategory>>> call(int categoryId) {
     return catalogRepository.getSubcategoriesByCategoryID(categoryId);

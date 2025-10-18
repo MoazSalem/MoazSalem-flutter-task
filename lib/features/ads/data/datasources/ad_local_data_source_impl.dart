@@ -27,7 +27,7 @@ class AdLocalDataSourceImpl implements AdLocalDataSource {
   ) async {
     try {
       final ads = await db.query(
-        'ads',
+        'ad_subcategories',
         where: 'subcategoryId = ?',
         whereArgs: [subcategoryId],
       );

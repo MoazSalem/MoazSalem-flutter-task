@@ -13,7 +13,7 @@
   "filter" : "فلترة",
   "bt_default" : "رجوع للأفتراضى",
   "category" : "الفئة",
-  "real_estate" : "عقارات",
+  "real_estates" : "عقارات",
   "villa_s" : "فلل للبيع",
   "change" : "تغيير",
   "location" : "الموقع",
@@ -78,5 +78,17 @@
    "next": "التالى",
    "jacket": "جاكيت من الصوف مناسب",
    "no_results_found": "لا يوجد نتائج",
-   "unexpected_error": "حدث خطأ غير متوقع"
+   "unexpected_error": "حدث خطأ غير متوقع",
+   "all_deals": "كل العروض",
+   "clothing": "ملابس",
+   "accessories": "أكسسوارات",
+   "electronics":"الكترونيات",
+   "fashion": "موضة",
+   "real_estate": "العقارات",
+   "men_fashion": "موضة رجالى",
+   "watches" : "ساعات",
+   "smartphones": "موبايلات",
+   "makeup": "منتجات تجميل",
+   "villas": "عقارات",
+   "no_subcategories": "لا يوجد فئة فرعية لهذه النوع "
 }

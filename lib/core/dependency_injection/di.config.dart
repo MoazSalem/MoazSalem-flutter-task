@@ -77,8 +77,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i622.GetAllCategoriesUseCase>(
       () => _i622.GetAllCategoriesUseCase(gh<_i67.CatalogRepository>()),
     );
-    gh.factory<_i198.GetSubcategoriesByCategoryIdUsecase>(
-      () => _i198.GetSubcategoriesByCategoryIdUsecase(
+    gh.factory<_i198.GetSubcategoriesByCategoryIdUseCase>(
+      () => _i198.GetSubcategoriesByCategoryIdUseCase(
         gh<_i67.CatalogRepository>(),
       ),
     );
