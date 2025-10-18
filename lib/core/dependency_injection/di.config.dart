@@ -20,7 +20,7 @@ import 'package:otex/features/ads/domain/datasource/ad_local_data_source.dart'
     as _i597;
 import 'package:otex/features/ads/domain/repositories/ad_repository.dart'
     as _i287;
-import 'package:otex/features/ads/domain/usecases/get_ads_by_subcategory_Id_usecase.dart'
+import 'package:otex/features/ads/domain/usecases/get_ads_by_subcategory_id_usecase.dart'
     as _i448;
 import 'package:otex/features/ads/domain/usecases/get_all_ads_usecase.dart'
     as _i444;

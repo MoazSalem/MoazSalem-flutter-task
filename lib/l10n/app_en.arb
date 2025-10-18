@@ -75,5 +75,9 @@
     "plans_for_you": "Plans Just for You",
     "contact_us": "Contact Us to choose the plan that suits you",
     "sales_team": "Sales Team",
-    "next": "Next"
+    "next": "Next",
+    "jacket": "Jacket from Sheepskin Suitable",
+    "no_results_found": "No Results Found",
+    "unexpected_error": "An unexpected error occurred"
+
 }

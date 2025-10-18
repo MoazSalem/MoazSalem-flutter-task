@@ -192,4 +192,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get next => 'التالى';
+
+  @override
+  String get jacket => 'جاكيت من الصوف مناسب';
+
+  @override
+  String get no_results_found => 'لا يوجد نتائج';
+
+  @override
+  String get unexpected_error => 'حدث خطأ غير متوقع';
 }

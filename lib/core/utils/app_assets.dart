@@ -1,6 +1,6 @@
 class AppAssets {
   // prevent instantiation
-  AppAssets._();
+  const AppAssets._();
 
   static const String arrowForward = 'assets/images/svg/arrow_forward.svg';
   static const String arrowForward2 = 'assets/images/svg/arrow_forward_2.svg';

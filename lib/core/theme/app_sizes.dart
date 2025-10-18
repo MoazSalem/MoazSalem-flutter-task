@@ -2,7 +2,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppSizes {
   // prevent instantiation
-  AppSizes._();
+  const AppSizes._();
 
   // Const Values for UI Elements
   static const double smallRoundedCorner = 4;

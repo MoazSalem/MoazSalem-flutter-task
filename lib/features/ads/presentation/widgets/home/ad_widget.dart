@@ -1,15 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 import 'package:otex/core/theme/app_sizes.dart';
 import 'package:otex/core/theme/app_typography.dart';
 import 'package:otex/core/utils/app_assets.dart';
+import 'package:otex/core/utils/translations_helper.dart';
+import 'package:otex/features/ads/domain/entities/ad.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
 class AdWidget extends StatelessWidget {
-  const AdWidget({super.key});
+  final Ad ad;
+  const AdWidget({super.key, required this.ad});
 
   @override
   Widget build(BuildContext context) {
+    // get translated title
+    final title = TranslationsHelper.getTranslation(context, ad.title);
+    // format the price to have commas
+    NumberFormat formatter = NumberFormat.decimalPattern('en_US');
+    final discountedPrice = formatter.format(ad.discountedPrice);
+    final originalPrice = formatter.format(ad.originalPrice);
+    // format the soldCount to be in ks --> 3.3k
+    formatter = NumberFormat.compact();
+    final soldCount = formatter.format(ad.soldCount);
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
@@ -20,20 +33,29 @@ class AdWidget extends StatelessWidget {
         ),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.min,
+        spacing: AppSizes.p8,
         children: [
-          _ImageContainer(image: AppAssets.getImageByUrl(url: "png/shirt.png")),
-          SizedBox(height: AppSizes.p8),
-          const _TitleRow(title: "جاكيت من الصوف مناسب", isDiscounted: true),
-          SizedBox(height: AppSizes.p8),
-          _PriceRow(
-            discountedPrice: "32,000,000",
-            originalPrice: "60,000,000",
-            currency: AppLocalizations.of(context)!.egp,
+          // Ad Image
+          _ImageContainer(image: AppAssets.getImageByUrl(url: ad.imageUrl)),
+          // Ad Info
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Column(
+              spacing: AppSizes.p8,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _TitleRow(title: title, isDiscounted: true),
+                _PriceRow(
+                  discountedPrice: discountedPrice,
+                  originalPrice: originalPrice,
+                  currency: AppLocalizations.of(context)!.egp,
+                ),
+                _SoldOverRow(soldCount: soldCount),
+                const _SellerInfoRow(),
+              ],
+            ),
           ),
-          SizedBox(height: AppSizes.p8),
-          const _SoldOverRow(soldCount: "3.3k"),
-          const _SellerInfoRow(),
         ],
       ),
     );
@@ -74,23 +96,20 @@ class _TitleRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSizes.p8),
-      child: Row(
-        children: [
-          Expanded(
-            child: Text(
-              title,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: AppTypography.titleMedium.copyWith(
-                color: Theme.of(context).colorScheme.primary,
-              ),
+    return Row(
+      children: [
+        Expanded(
+          child: Text(
+            title,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: AppTypography.titleMedium.copyWith(
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
-          if (isDiscounted) SvgPicture.asset(AppAssets.discount),
-        ],
-      ),
+        ),
+        if (isDiscounted) SvgPicture.asset(AppAssets.discount),
+      ],
     );
   }
 }
@@ -107,35 +126,33 @@ class _PriceRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSizes.p8),
-      child: Row(
-        children: [
-          Expanded(
-            child: RichText(
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              text: TextSpan(
-                style: AppTypography.titleMedium.copyWith(
-                  color: Theme.of(context).colorScheme.secondaryFixed,
-                ),
-                children: [
-                  TextSpan(text: discountedPrice),
-                  TextSpan(text: "$currency/"),
-                  TextSpan(
-                    text: originalPrice,
-                    style: AppTypography.titleMedium.copyWith(
-                      color: Theme.of(context).colorScheme.primaryFixedDim,
-                      decoration: TextDecoration.lineThrough,
-                    ),
-                  ),
-                ],
+    final colorScheme = Theme.of(context).colorScheme;
+    return Row(
+      children: [
+        Expanded(
+          child: RichText(
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            text: TextSpan(
+              style: AppTypography.titleMedium.copyWith(
+                color: colorScheme.secondaryFixed,
               ),
+              children: [
+                TextSpan(text: discountedPrice),
+                TextSpan(text: "$currency/"),
+                TextSpan(
+                  text: originalPrice,
+                  style: AppTypography.titleMedium.copyWith(
+                    color: colorScheme.primaryFixedDim,
+                    decoration: TextDecoration.lineThrough,
+                  ),
+                ),
+              ],
             ),
           ),
-          FavoriteWidget(),
-        ],
-      ),
+        ),
+        FavoriteWidget(),
+      ],
     );
   }
 }
@@ -203,7 +220,7 @@ class _SellerInfoRow extends StatelessWidget {
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Padding(
-          padding: EdgeInsets.all(AppSizes.p8),
+          padding: EdgeInsets.symmetric(vertical: AppSizes.p8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

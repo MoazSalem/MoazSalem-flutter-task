@@ -19,8 +19,8 @@ abstract class AdModel with _$AdModel {
       _$AdModelFromJson(json);
 }
 
-extension AdModelToAd on AdModel {
-  Ad toAd() {
+extension ToEntity on AdModel {
+  Ad toEntity() {
     return Ad(
       id: id,
       title: name,

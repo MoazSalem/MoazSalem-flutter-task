@@ -16,7 +16,7 @@ class AdRepositoryImpl implements AdRepository {
   Future<Either<ErrorException, List<Ad>>> getAllAds() async {
     final adsResult = await datasource.getAllAds();
     return adsResult.map(
-      (models) => models.map((model) => model.toAd()).toList(),
+      (models) => models.map((model) => model.toEntity()).toList(),
     );
   }
 
@@ -26,7 +26,7 @@ class AdRepositoryImpl implements AdRepository {
   ) async {
     final adsResult = await datasource.getAdsBySubcategoryId(subcategoryId);
     return adsResult.map(
-      (models) => models.map((model) => model.toAd()).toList(),
+      (models) => models.map((model) => model.toEntity()).toList(),
     );
   }
 }

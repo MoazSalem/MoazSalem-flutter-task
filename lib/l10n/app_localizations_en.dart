@@ -192,4 +192,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get next => 'Next';
+
+  @override
+  String get jacket => 'Jacket from Sheepskin Suitable';
+
+  @override
+  String get no_results_found => 'No Results Found';
+
+  @override
+  String get unexpected_error => 'An unexpected error occurred';
 }

@@ -457,6 +457,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Next'**
   String get next;
+
+  /// No description provided for @jacket.
+  ///
+  /// In en, this message translates to:
+  /// **'Jacket from Sheepskin Suitable'**
+  String get jacket;
+
+  /// No description provided for @no_results_found.
+  ///
+  /// In en, this message translates to:
+  /// **'No Results Found'**
+  String get no_results_found;
+
+  /// No description provided for @unexpected_error.
+  ///
+  /// In en, this message translates to:
+  /// **'An unexpected error occurred'**
+  String get unexpected_error;
 }
 
 class _AppLocalizationsDelegate

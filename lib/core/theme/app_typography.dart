@@ -3,7 +3,7 @@ import 'package:otex/core/theme/app_sizes.dart';
 
 class AppTypography {
   // prevent instantiation
-  AppTypography._();
+  const AppTypography._();
 
   static const Color _lightTextColor = Color(0xff090F1F);
 

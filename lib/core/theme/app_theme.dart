@@ -3,7 +3,7 @@ import 'package:otex/core/theme/app_typography.dart';
 
 class AppTheme {
   // prevent instantiation
-  AppTheme._();
+  const AppTheme._();
 
   static ThemeData lightTheme = ThemeData(
     colorScheme: ColorScheme.fromSeed(
