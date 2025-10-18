@@ -1,37 +1,33 @@
 import 'package:flutter/foundation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:otex/core/db/database_seeder.dart';
 import 'package:sqflite/sqflite.dart';
 
-class AppDatabase {
-  // create a singleton
-  static final AppDatabase instance = AppDatabase._init();
-  static Database? _db;
-  AppDatabase._init();
+// This is the function injectable will call to dispose of the DB
+Future<void> disposeDatabase(Database db) async {
+  await db.close();
+}
 
-  // get database instance and initialize database if not initialized
+@module
+abstract class DatabaseModule {
+  @preResolve
+  @Singleton(dispose: disposeDatabase)
   Future<Database> get database async {
-    if (_db != null) return _db!;
-    _db = await _initDB('app_database.db');
-    return _db!;
-  }
-
-  // initialize database
-  Future<Database> _initDB(String databaseName) async {
     final dbPath = await getDatabasesPath();
-    final path = "$dbPath/$databaseName";
+    final path = "$dbPath/app_database.db";
     return await openDatabase(
       path,
       version: 1,
       onCreate: (db, version) async {
         await _createDB(db, version);
-        // seed right after creation
+        // seed all tables right after creation
         await DatabaseSeeder.seedDatabase(db);
       },
     );
   }
 
   // create database tables (5 tables)
-  Future<void> _createDB(Database db, int version) async {
+  static Future<void> _createDB(Database db, int version) async {
     // categories
     await db.execute('''
       CREATE TABLE categories (
