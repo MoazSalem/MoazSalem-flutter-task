@@ -26,10 +26,14 @@ class AdLocalDataSourceImpl implements AdLocalDataSource {
     int subcategoryId,
   ) async {
     try {
-      final ads = await db.query(
-        'ad_subcategories',
-        where: 'subcategoryId = ?',
-        whereArgs: [subcategoryId],
+      final ads = await db.rawQuery(
+        '''
+         SELECT ads.*
+         FROM ads
+         INNER JOIN ad_subcategories ON ads.id = ad_subcategories.adId
+         WHERE ad_subcategories.subcategoryId = ?
+        ''',
+        [subcategoryId],
       );
       return Right(ads.map((ad) => AdModel.fromJson(ad)).toList());
     } catch (e) {

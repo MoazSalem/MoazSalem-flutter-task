@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox.expand(
       child: CustomScrollView(
-        slivers: [
+        slivers: const [
           HomeScreenAppBar(),
           CategoriesListBar(),
           SubcategoriesListBar(),

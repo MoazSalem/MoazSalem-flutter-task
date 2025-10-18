@@ -13,6 +13,8 @@ class CatalogState extends Equatable {
   // The currently selected main category
   final Category? selectedCategory;
 
+  final int selectedSubcategoryIndex;
+
   // To hold any error messages
   final String? error;
 
@@ -22,6 +24,7 @@ class CatalogState extends Equatable {
     this.categories = const [],
     this.subcategories = const [],
     this.selectedCategory,
+    this.selectedSubcategoryIndex = -1,
     this.error,
   });
 
@@ -31,6 +34,7 @@ class CatalogState extends Equatable {
     List<Category>? categories,
     List<Subcategory>? subcategories,
     Category? selectedCategory,
+    int? selectedSubcategoryIndex,
     String? error,
   }) {
     return CatalogState(
@@ -40,6 +44,8 @@ class CatalogState extends Equatable {
       categories: categories ?? this.categories,
       subcategories: subcategories ?? this.subcategories,
       selectedCategory: selectedCategory ?? this.selectedCategory,
+      selectedSubcategoryIndex:
+          selectedSubcategoryIndex ?? this.selectedSubcategoryIndex,
       error: error ?? this.error,
     );
   }
@@ -52,5 +58,6 @@ class CatalogState extends Equatable {
     subcategories,
     selectedCategory,
     error,
+    selectedSubcategoryIndex,
   ];
 }

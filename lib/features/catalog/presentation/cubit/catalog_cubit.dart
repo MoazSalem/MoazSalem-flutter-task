@@ -69,6 +69,7 @@ class CatalogCubit extends Cubit<CatalogState> {
         isSubcategoriesLoading: true,
         subcategories: [], // Clear old list
         selectedCategory: category,
+        selectedSubcategoryIndex: -1,
       ),
     );
 
@@ -88,8 +89,13 @@ class CatalogCubit extends Cubit<CatalogState> {
         state.copyWith(
           isSubcategoriesLoading: false,
           subcategories: subcategories as List<Subcategory>?,
+          selectedSubcategoryIndex: -1,
         ),
       ),
     );
+  }
+
+  Future<void> onSubcategorySelected(int index) async {
+    emit(state.copyWith(selectedSubcategoryIndex: index));
   }
 }

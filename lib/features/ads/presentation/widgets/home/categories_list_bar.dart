@@ -20,7 +20,8 @@ class _CategoriesListBarState extends State<CategoriesListBar> {
     return SliverPadding(
       padding: EdgeInsetsGeometry.directional(start: AppSizes.p16),
       sliver: HorizontalScrollBar(
-        pinned: true,
+        // could be pinned while scrolling
+        pinned: false,
         height: AppSizes.categoryBarHeight,
         child: BlocBuilder<CatalogCubit, CatalogState>(
           builder: (context, state) {

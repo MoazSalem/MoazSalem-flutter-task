@@ -7,15 +7,9 @@ import 'package:otex/features/ads/presentation/widgets/home/subcategory_widget.d
 import 'package:otex/features/catalog/presentation/cubit/catalog_cubit.dart';
 import 'package:otex/l10n/app_localizations.dart';
 
-class SubcategoriesListBar extends StatefulWidget {
+class SubcategoriesListBar extends StatelessWidget {
   const SubcategoriesListBar({super.key});
 
-  @override
-  State<SubcategoriesListBar> createState() => _SubcategoriesListBarState();
-}
-
-class _SubcategoriesListBarState extends State<SubcategoriesListBar> {
-  int _selectedIndex = -1;
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
@@ -25,6 +19,8 @@ class _SubcategoriesListBarState extends State<SubcategoriesListBar> {
         start: AppSizes.p16,
       ),
       sliver: HorizontalScrollBar(
+        // could be pinned while scrolling
+        pinned: false,
         height: AppSizes.subcategoryBarHeight,
         child: BlocBuilder<CatalogCubit, CatalogState>(
           builder: (context, state) {
@@ -41,14 +37,14 @@ class _SubcategoriesListBarState extends State<SubcategoriesListBar> {
                 itemCount: state.subcategories.length,
                 itemBuilder: (context, index) => SubcategoryWidget(
                   subcategory: state.subcategories[index],
-                  isSelected: index == _selectedIndex,
+                  isSelected: index == state.selectedSubcategoryIndex,
                   onTap: () {
-                    setState(() {
-                      _selectedIndex = index;
-                    });
                     BlocProvider.of<AdsCubit>(
                       context,
                     ).getAdsBySubcategoryId(state.subcategories[index].id);
+                    BlocProvider.of<CatalogCubit>(
+                      context,
+                    ).onSubcategorySelected(index);
                   },
                 ),
               );
