@@ -13,8 +13,8 @@ abstract class CategoryModel with _$CategoryModel {
       _$CategoryModelFromJson(json);
 }
 
-extension ToCategory on CategoryModel {
-  Category toCategory() {
+extension ToEntity on CategoryModel {
+  Category toEntity() {
     return Category(id: id, name: name);
   }
 }

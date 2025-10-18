@@ -21,9 +21,23 @@ import 'package:otex/features/ads/domain/datasource/ad_local_data_source.dart'
 import 'package:otex/features/ads/domain/repositories/ad_repository.dart'
     as _i287;
 import 'package:otex/features/ads/domain/usecases/get_ads_by_subcategory_id_usecase.dart'
-    as _i448;
+    as _i908;
 import 'package:otex/features/ads/domain/usecases/get_all_ads_usecase.dart'
     as _i444;
+import 'package:otex/features/catalog/data/datasources/catalog_local_datasource_impl.dart'
+    as _i398;
+import 'package:otex/features/catalog/data/repositories/catalog_repository_impl.dart'
+    as _i88;
+import 'package:otex/features/catalog/domain/datasources/catalog_local_datasource.dart'
+    as _i364;
+import 'package:otex/features/catalog/domain/repositories/catalog_repository.dart'
+    as _i67;
+import 'package:otex/features/catalog/domain/usecases/get_all_subcategories_usecase.dart'
+    as _i950;
+import 'package:otex/features/catalog/domain/usecases/get_categories_usecase.dart'
+    as _i622;
+import 'package:otex/features/catalog/domain/usecases/get_subcategories_by_category_id_usecase.dart'
+    as _i198;
 import 'package:sqflite/sqflite.dart' as _i779;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -42,14 +56,31 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i597.AdLocalDataSource>(
       () => _i866.AdLocalDataSourceImpl(db: gh<_i779.Database>()),
     );
+    gh.singleton<_i364.CatalogLocalDataSource>(
+      () => _i398.CatalogLocalDataSourceImpl(gh<_i779.Database>()),
+    );
     gh.lazySingleton<_i287.AdRepository>(
       () => _i735.AdRepositoryImpl(gh<_i597.AdLocalDataSource>()),
     );
-    gh.factory<_i448.GetAdsBySubcategoryIdUseCase>(
-      () => _i448.GetAdsBySubcategoryIdUseCase(gh<_i287.AdRepository>()),
+    gh.singleton<_i67.CatalogRepository>(
+      () => _i88.CatalogRepositoryImpl(gh<_i364.CatalogLocalDataSource>()),
     );
     gh.factory<_i444.GetAllAdsUseCase>(
       () => _i444.GetAllAdsUseCase(gh<_i287.AdRepository>()),
+    );
+    gh.factory<_i908.GetAdsBySubcategoryIdUseCase>(
+      () => _i908.GetAdsBySubcategoryIdUseCase(gh<_i287.AdRepository>()),
+    );
+    gh.factory<_i950.GetAllSubcategoriesUseCase>(
+      () => _i950.GetAllSubcategoriesUseCase(gh<_i67.CatalogRepository>()),
+    );
+    gh.factory<_i622.GetAllCategoriesUseCase>(
+      () => _i622.GetAllCategoriesUseCase(gh<_i67.CatalogRepository>()),
+    );
+    gh.factory<_i198.GetSubcategoriesByCategoryIdUsecase>(
+      () => _i198.GetSubcategoriesByCategoryIdUsecase(
+        gh<_i67.CatalogRepository>(),
+      ),
     );
     return this;
   }

@@ -17,8 +17,8 @@ abstract class SubcategoryModel with _$SubcategoryModel {
       _$SubcategoryModelFromJson(json);
 }
 
-extension ToSubcategory on SubcategoryModel {
-  Subcategory toSubcategory() {
+extension ToEntity on SubcategoryModel {
+  Subcategory toEntity() {
     return Subcategory(
       id: id,
       name: name,
