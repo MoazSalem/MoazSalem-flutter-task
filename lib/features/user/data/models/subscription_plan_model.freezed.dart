@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$SubscriptionPlanModel {
 
- int get id; String get description; double get price; List<int> get perks; int? get viewsMultiplier; bool get bestValue; bool get highestViews;
+ int get id; String get description; double get price;@JsonStringToIntListConverter() List<int> get perks; int? get viewsMultiplier;@BoolToIntConverter() bool get bestValue;@BoolToIntConverter() bool get highestViews;
 /// Create a copy of SubscriptionPlanModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $SubscriptionPlanModelCopyWith<$Res>  {
   factory $SubscriptionPlanModelCopyWith(SubscriptionPlanModel value, $Res Function(SubscriptionPlanModel) _then) = _$SubscriptionPlanModelCopyWithImpl;
 @useResult
 $Res call({
- int id, String description, double price, List<int> perks, int? viewsMultiplier, bool bestValue, bool highestViews
+ int id, String description, double price,@JsonStringToIntListConverter() List<int> perks, int? viewsMultiplier,@BoolToIntConverter() bool bestValue,@BoolToIntConverter() bool highestViews
 });
 
 
@@ -159,7 +159,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String description,  double price,  List<int> perks,  int? viewsMultiplier,  bool bestValue,  bool highestViews)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String description,  double price, @JsonStringToIntListConverter()  List<int> perks,  int? viewsMultiplier, @BoolToIntConverter()  bool bestValue, @BoolToIntConverter()  bool highestViews)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SubscriptionPlanModel() when $default != null:
 return $default(_that.id,_that.description,_that.price,_that.perks,_that.viewsMultiplier,_that.bestValue,_that.highestViews);case _:
@@ -180,7 +180,7 @@ return $default(_that.id,_that.description,_that.price,_that.perks,_that.viewsMu
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String description,  double price,  List<int> perks,  int? viewsMultiplier,  bool bestValue,  bool highestViews)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String description,  double price, @JsonStringToIntListConverter()  List<int> perks,  int? viewsMultiplier, @BoolToIntConverter()  bool bestValue, @BoolToIntConverter()  bool highestViews)  $default,) {final _that = this;
 switch (_that) {
 case _SubscriptionPlanModel():
 return $default(_that.id,_that.description,_that.price,_that.perks,_that.viewsMultiplier,_that.bestValue,_that.highestViews);case _:
@@ -200,7 +200,7 @@ return $default(_that.id,_that.description,_that.price,_that.perks,_that.viewsMu
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String description,  double price,  List<int> perks,  int? viewsMultiplier,  bool bestValue,  bool highestViews)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String description,  double price, @JsonStringToIntListConverter()  List<int> perks,  int? viewsMultiplier, @BoolToIntConverter()  bool bestValue, @BoolToIntConverter()  bool highestViews)?  $default,) {final _that = this;
 switch (_that) {
 case _SubscriptionPlanModel() when $default != null:
 return $default(_that.id,_that.description,_that.price,_that.perks,_that.viewsMultiplier,_that.bestValue,_that.highestViews);case _:
@@ -215,22 +215,22 @@ return $default(_that.id,_that.description,_that.price,_that.perks,_that.viewsMu
 @JsonSerializable()
 
 class _SubscriptionPlanModel implements SubscriptionPlanModel {
-  const _SubscriptionPlanModel({required this.id, required this.description, required this.price, required final  List<int> perks, this.viewsMultiplier, required this.bestValue, required this.highestViews}): _perks = perks;
+  const _SubscriptionPlanModel({required this.id, required this.description, required this.price, @JsonStringToIntListConverter() required final  List<int> perks, this.viewsMultiplier, @BoolToIntConverter() required this.bestValue, @BoolToIntConverter() required this.highestViews}): _perks = perks;
   factory _SubscriptionPlanModel.fromJson(Map<String, dynamic> json) => _$SubscriptionPlanModelFromJson(json);
 
 @override final  int id;
 @override final  String description;
 @override final  double price;
  final  List<int> _perks;
-@override List<int> get perks {
+@override@JsonStringToIntListConverter() List<int> get perks {
   if (_perks is EqualUnmodifiableListView) return _perks;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_perks);
 }
 
 @override final  int? viewsMultiplier;
-@override final  bool bestValue;
-@override final  bool highestViews;
+@override@BoolToIntConverter() final  bool bestValue;
+@override@BoolToIntConverter() final  bool highestViews;
 
 /// Create a copy of SubscriptionPlanModel
 /// with the given fields replaced by the non-null parameter values.
@@ -265,7 +265,7 @@ abstract mixin class _$SubscriptionPlanModelCopyWith<$Res> implements $Subscript
   factory _$SubscriptionPlanModelCopyWith(_SubscriptionPlanModel value, $Res Function(_SubscriptionPlanModel) _then) = __$SubscriptionPlanModelCopyWithImpl;
 @override @useResult
 $Res call({
- int id, String description, double price, List<int> perks, int? viewsMultiplier, bool bestValue, bool highestViews
+ int id, String description, double price,@JsonStringToIntListConverter() List<int> perks, int? viewsMultiplier,@BoolToIntConverter() bool bestValue,@BoolToIntConverter() bool highestViews
 });
 
 

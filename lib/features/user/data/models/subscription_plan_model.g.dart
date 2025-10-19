@@ -12,12 +12,14 @@ _SubscriptionPlanModel _$SubscriptionPlanModelFromJson(
   id: (json['id'] as num).toInt(),
   description: json['description'] as String,
   price: (json['price'] as num).toDouble(),
-  perks: (json['perks'] as List<dynamic>)
-      .map((e) => (e as num).toInt())
-      .toList(),
+  perks: const JsonStringToIntListConverter().fromJson(json['perks'] as String),
   viewsMultiplier: (json['viewsMultiplier'] as num?)?.toInt(),
-  bestValue: json['bestValue'] as bool,
-  highestViews: json['highestViews'] as bool,
+  bestValue: const BoolToIntConverter().fromJson(
+    (json['bestValue'] as num).toInt(),
+  ),
+  highestViews: const BoolToIntConverter().fromJson(
+    (json['highestViews'] as num).toInt(),
+  ),
 );
 
 Map<String, dynamic> _$SubscriptionPlanModelToJson(
@@ -26,8 +28,8 @@ Map<String, dynamic> _$SubscriptionPlanModelToJson(
   'id': instance.id,
   'description': instance.description,
   'price': instance.price,
-  'perks': instance.perks,
+  'perks': const JsonStringToIntListConverter().toJson(instance.perks),
   'viewsMultiplier': instance.viewsMultiplier,
-  'bestValue': instance.bestValue,
-  'highestViews': instance.highestViews,
+  'bestValue': const BoolToIntConverter().toJson(instance.bestValue),
+  'highestViews': const BoolToIntConverter().toJson(instance.highestViews),
 };

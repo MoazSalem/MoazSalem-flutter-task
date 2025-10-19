@@ -31,6 +31,28 @@ class TranslationsHelper {
         return locale.villas;
       case "jacket":
         return locale.jacket;
+      case "basic":
+        return locale.p_basic;
+      case "extra":
+        return locale.p_extra;
+      case "plus":
+        return locale.p_plus;
+      case "super":
+        return locale.p_super;
+      case "perk_0":
+        return locale.perk_0;
+      case "perk_1":
+        return locale.perk_1;
+      case "perk_2":
+        return locale.perk_2;
+      case "perk_3":
+        return locale.perk_3;
+      case "perk_4":
+        return locale.perk_4;
+      case "perk_5":
+        return locale.perk_5;
+      case "perk_6":
+        return locale.perk_6;
       default:
         return locale.jacket;
     }

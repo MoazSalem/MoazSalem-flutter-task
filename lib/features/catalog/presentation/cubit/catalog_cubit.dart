@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart' hide Category;
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:otex/features/catalog/domain/entities/category.dart';
 import 'package:otex/features/catalog/domain/entities/subcategory.dart';
 import 'package:otex/features/catalog/domain/usecases/get_all_subcategories_usecase.dart';
@@ -9,6 +10,7 @@ import 'package:otex/features/catalog/domain/usecases/get_subcategories_by_categ
 
 part 'catalog_state.dart';
 
+@injectable
 class CatalogCubit extends Cubit<CatalogState> {
   final GetAllCategoriesUseCase _getAllCategoriesUseCase;
   final GetAllSubcategoriesUseCase _getAllSubcategoriesUseCase;
