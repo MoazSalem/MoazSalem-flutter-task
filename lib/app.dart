@@ -10,6 +10,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
+      // App fully supports both arabic and english languages, but i didn't implement a switch language feature
       locale: const Locale('ar'),
       title: 'Otex',
       theme: AppTheme.lightTheme,
