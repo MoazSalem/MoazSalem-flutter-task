@@ -31,7 +31,7 @@ This version was built as a **preview submission for the IT Legend application t
 
 | 🏠 Home Screen | 💳 Subscription Plans | 🎯 Filter Screen  |
 |----------------|----------------|-----------------------|
-| <img width="300" alt="Home1" src="https://github.com/user-attachments/assets/6b3790bf-8162-4944-b658-7cd88afa0026" /> | <img width="300" alt="Subscription1" src="https://github.com/user-attachments/assets/143dca33-5d94-4d0a-9a71-24fc6a5b9b83" /> | <img width="300" alt="Filter1" src="https://github.com/user-attachments/assets/075bdb6a-0506-465f-a752-c12d6c8bf0c8" /> |
+| <img width="300" alt="Home1" src="https://github.com/user-attachments/assets/1e10011b-9c74-42bc-b0c2-5f205ebc5a0e" /> | <img width="300" alt="Subscription1" src="https://github.com/user-attachments/assets/143dca33-5d94-4d0a-9a71-24fc6a5b9b83" /> | <img width="300" alt="Filter1" src="https://github.com/user-attachments/assets/075bdb6a-0506-465f-a752-c12d6c8bf0c8" /> |
 | <img width="300"  alt="Home2" src="https://github.com/user-attachments/assets/993690aa-d139-4134-aaff-72c4e9e2198e" /> | <img width="300" alt="Subscription2" src="https://github.com/user-attachments/assets/8f0dfe72-8049-4b0a-89e7-2b5a31610483" /> | <img width="300" alt="Filter2" src="https://github.com/user-attachments/assets/db41cd67-2bc0-4c4f-a27c-da4c7815aa06" /> |
 
 ---
